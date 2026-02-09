@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		4D7D99B05135F4165E704BA3 /* Date+LocalDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D446DB6C671D4FA0390A921 /* Date+LocalDay.swift */; };
 		50833521410621AEB2245571 /* SpendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB86F1EBD03002A3151B6F5 /* SpendItem.swift */; };
 		579AA1E70EFAA82C75175342 /* LiveFXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1780B6D4B4C01CD117E30A /* LiveFXService.swift */; };
+		59ABC4947D9DAA81BB708D6C /* RestartGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9729D928B6E09C8468CD16D /* RestartGameTests.swift */; };
 		59BF3009EDC66F2D9A5A9085 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1982789D93A3197E57F85 /* NotificationService.swift */; };
 		5B1C34AE93CAE29F51E0AA80 /* GameStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDE69BEBCE3C5751E4C76E /* GameStateStore.swift */; };
 		6277A8D3A5800B5FCD4CA352 /* InMemoryStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362117E4C2B2F106953E4E0E /* InMemoryStores.swift */; };
@@ -103,6 +104,7 @@
 		BA9EB40501ECC30B5A8BC5F9 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		BF1F7A152B3A9CDF07C0AA2B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		C4990144EF1E3D7986401014 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C9729D928B6E09C8468CD16D /* RestartGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartGameTests.swift; sourceTree = "<group>"; };
 		D9A1034723A99864FEF11561 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		DBAC23719607479A5FC6A675 /* CelebrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationViewModel.swift; sourceTree = "<group>"; };
 		DE80B6F94673B0746CB8B536 /* AchievementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		F56E383FE5A57B2F99A71D60 /* MinorUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorUnits.swift; sourceTree = "<group>"; };
 		FC1780B6D4B4C01CD117E30A /* LiveFXService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFXService.swift; sourceTree = "<group>"; };
 		FCB791C3D4D3FEADA90CBCAE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		FD778623EF29448DA5105EA3 /* DreamSpend.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DreamSpend.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD778623EF29448DA5105EA3 /* DreamSpend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamSpend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				1D20205B90EB12B01282ED9D /* DayProgressionTests.swift */,
+				C9729D928B6E09C8468CD16D /* RestartGameTests.swift */,
 			);
 			path = DayProgression;
 			sourceTree = "<group>";
@@ -518,7 +521,6 @@
 			);
 			mainGroup = FFD57A6588BB7BD1965513BB;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -594,6 +596,7 @@
 				9AD9B570AD774F4EF2382391 /* DayProgressionTests.swift in Sources */,
 				75A9A771B833D2E129AC192D /* FXConversionTests.swift in Sources */,
 				6277A8D3A5800B5FCD4CA352 /* InMemoryStores.swift in Sources */,
+				59ABC4947D9DAA81BB708D6C /* RestartGameTests.swift in Sources */,
 				B23C17D1EAA9856DAE8575AE /* StreakResetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JDC7U48FVQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DreamSpend;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -736,6 +740,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JDC7U48FVQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DreamSpend;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

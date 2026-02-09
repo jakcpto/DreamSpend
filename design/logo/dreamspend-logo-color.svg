@@ -1,72 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <title>DreamSpend — Piggy dream</title>
-  <!-- Premium-leaning, app-icon-friendly color sketch -->
+  <title>DreamSpend — Premium Golden Piggy</title>
+  <!-- Premium, app-icon-friendly mark: golden piggy + dream spark + subtle ×2 engraving -->
   <defs>
     <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(340 250) rotate(55) scale(980 980)">
-      <stop offset="0" stop-color="#101A33"/>
-      <stop offset="0.55" stop-color="#0A1020"/>
-      <stop offset="1" stop-color="#050814"/>
+      gradientTransform="translate(340 210) rotate(55) scale(1020 1020)">
+      <stop offset="0" stop-color="#1B2A52"/>
+      <stop offset="0.55" stop-color="#0A1023"/>
+      <stop offset="1" stop-color="#050713"/>
     </radialGradient>
 
-    <!-- Rose-gold-ish pig gradient -->
-    <linearGradient id="pig" x1="260" y1="330" x2="820" y2="930" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#F6E0D6"/>
-      <stop offset="0.35" stop-color="#E7BEB2"/>
-      <stop offset="1" stop-color="#B8747E"/>
+    <!-- Metallic gold -->
+    <linearGradient id="goldMetal" x1="250" y1="350" x2="820" y2="910" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF7C7"/>
+      <stop offset="0.22" stop-color="#F3D37A"/>
+      <stop offset="0.5" stop-color="#E3B24B"/>
+      <stop offset="0.78" stop-color="#C98A1C"/>
+      <stop offset="1" stop-color="#FFD68A"/>
     </linearGradient>
 
-    <linearGradient id="gold" x1="610" y1="280" x2="720" y2="450" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFF2B2"/>
-      <stop offset="0.55" stop-color="#F7D36B"/>
-      <stop offset="1" stop-color="#D19A12"/>
+    <linearGradient id="goldRim" x1="300" y1="420" x2="780" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="0.28" stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <linearGradient id="sparkGold" x1="590" y1="230" x2="710" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF7C7"/>
+      <stop offset="0.55" stop-color="#F6CF63"/>
+      <stop offset="1" stop-color="#C98916"/>
     </linearGradient>
 
     <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.45"/>
     </filter>
 
-    <filter id="goldGlow" x="-60%" y="-60%" width="220%" height="220%">
+    <filter id="sparkGlow" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur stdDeviation="10" result="blur"/>
       <feColorMatrix in="blur" type="matrix"
-        values="1 0 0 0 0.9  0 1 0 0 0.72  0 0 1 0 0.18  0 0 0 0.9 0" result="glow"/>
+        values="1 0 0 0 0.95  0 1 0 0 0.78  0 0 1 0 0.22  0 0 0 0.85 0" result="glow"/>
       <feMerge>
         <feMergeNode in="glow"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <mask id="engraveMask">
+      <rect width="1024" height="1024" fill="white"/>
+      <text x="428" y="720" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+            font-size="150" font-weight="800" fill="black">×2</text>
+    </mask>
   </defs>
 
   <!-- Background -->
   <rect width="1024" height="1024" rx="220" fill="url(#bg)"/>
 
-  <!-- Dream coming out: cloud + star -->
+  <!-- Dream spark (minimal) -->
   <g>
-    <path d="M602 250c18-36 62-58 106-46 35 10 61 41 61 76 0 2 0 4 0 6 33 10 56 40 56 74 0 44-38 79-85 79H585c-40 0-73-28-73-63 0-29 22-54 52-61 6-27 21-50 38-65z"
-          fill="#F8FAFC" opacity="0.88" stroke="#CBD5E1" stroke-width="10" stroke-linejoin="round"/>
-    <path d="M644 308l20 41 46 6-34 33 8 46-40-21-41 21 8-46-34-33 46-6 21-41z"
-          fill="url(#gold)" filter="url(#goldGlow)"/>
-    <path d="M560 410c0-52 14-96 42-130" stroke="#E5E7EB" stroke-opacity="0.9" stroke-width="34" stroke-linecap="round"/>
+    <path d="M636 232l26 54 60 8-44 42 10 60-52-27-53 27 10-60-44-42 60-8 27-54z"
+      fill="url(#sparkGold)" filter="url(#sparkGlow)"/>
+    <path d="M570 424c6-74 28-128 66-164" stroke="#E5E7EB" stroke-opacity="0.88" stroke-width="30" stroke-linecap="round"/>
   </g>
 
-  <!-- Piggy -->
+  <!-- Premium golden piggy (new silhouette) -->
   <g filter="url(#softShadow)">
-    <path d="M260 610c0-150 110-270 270-270 162 0 274 114 274 262 0 88-42 165-110 214 2 20 6 54 0 78-9 35-42 54-84 54H512c-56 0-90-23-104-62-53-6-101-26-140-58-6 2-15 4-26 4-24 0-46-11-60-28-12-14-18-32-18-51 0-33 18-62 46-77 12-6 28-10 46-10h4z"
-          fill="url(#pig)"/>
-    <!-- Ear -->
-    <path d="M410 340c-12-46-4-98 22-142 52 18 90 56 108 104" stroke="#0B1220" stroke-opacity="0.78" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Tail -->
-    <path d="M815 560c50-10 83-46 93-96" stroke="#0B1220" stroke-opacity="0.78" stroke-width="32" stroke-linecap="round"/>
+    <!-- Body -->
+    <path d="M260 610c0-165 130-295 310-295h74c158 0 286 115 286 258 0 86-46 163-120 214 8 36 10 70 2 96-12 41-50 65-112 65H510c-70 0-112-30-126-78-64-7-122-31-170-69-8 3-18 4-30 4-29 0-55-13-72-34-14-17-22-39-22-62 0-40 22-74 56-92 15-8 33-12 54-12h10z"
+      fill="url(#goldMetal)"/>
+
+    <!-- Snout -->
+    <ellipse cx="318" cy="642" rx="90" ry="72" fill="url(#goldMetal)"/>
+    <ellipse cx="290" cy="642" rx="12" ry="16" fill="#0B1220" fill-opacity="0.34"/>
+    <ellipse cx="340" cy="642" rx="12" ry="16" fill="#0B1220" fill-opacity="0.34"/>
+
+    <!-- Ear (more geometric) -->
+    <path d="M446 338c-10-52 8-112 44-154 56 26 96 72 112 128"
+      stroke="#0B1220" stroke-opacity="0.40" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Tail (sleeker) -->
+    <path d="M844 560c58-10 98-54 110-118" stroke="#0B1220" stroke-opacity="0.40" stroke-width="30" stroke-linecap="round"/>
+
     <!-- Legs -->
-    <path d="M360 820v96" stroke="#0B1220" stroke-opacity="0.78" stroke-width="32" stroke-linecap="round"/>
-    <path d="M650 820v96" stroke="#0B1220" stroke-opacity="0.78" stroke-width="32" stroke-linecap="round"/>
-    <!-- Eye -->
-    <circle cx="592" cy="520" r="9" fill="#0B1220" fill-opacity="0.85"/>
+    <path d="M372 824v92" stroke="#0B1220" stroke-opacity="0.36" stroke-width="30" stroke-linecap="round"/>
+    <path d="M690 824v92" stroke="#0B1220" stroke-opacity="0.36" stroke-width="30" stroke-linecap="round"/>
+
     <!-- Coin slot -->
-    <path d="M475 410h150" stroke="#0B1220" stroke-opacity="0.78" stroke-width="32" stroke-linecap="round"/>
-    <!-- Subtle ×2 -->
-    <text x="440" y="700" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-          font-size="140" font-weight="800" fill="#0B1220" opacity="0.16">×2</text>
+    <path d="M506 404h170" stroke="#0B1220" stroke-opacity="0.42" stroke-width="30" stroke-linecap="round"/>
+
+    <!-- Eye -->
+    <circle cx="560" cy="538" r="9" fill="#0B1220" fill-opacity="0.45"/>
+
+    <!-- Highlight rim -->
+    <path d="M294 604c24-140 150-244 302-244h56c140 0 250 88 264 202"
+      stroke="url(#goldRim)" stroke-width="22" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Engraved ×2 (subtle cut) -->
+    <g mask="url(#engraveMask)">
+      <rect x="260" y="560" width="700" height="280" fill="#000000" opacity="0.07"/>
+    </g>
   </g>
 </svg>
