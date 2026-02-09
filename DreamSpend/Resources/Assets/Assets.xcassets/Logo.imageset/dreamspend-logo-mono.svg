@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>DreamSpend (mono) — Premium Golden Piggy (outline)</title>
+  <!-- Monochrome outline matching the premium silhouette (for editing/variants) -->
+
+  <!-- Dream spark -->
+  <g stroke="#111827" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M636 232l26 54 60 8-44 42 10 60-52-27-53 27 10-60-44-42 60-8 27-54z" fill="#111827" stroke="none"/>
+    <path d="M570 424c6-74 28-128 66-164"/>
+  </g>
+
+  <!-- Piggy -->
+  <g stroke="#111827" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Body -->
+    <path d="M260 610c0-165 130-295 310-295h74c158 0 286 115 286 258 0 86-46 163-120 214 8 36 10 70 2 96-12 41-50 65-112 65H510c-70 0-112-30-126-78-64-7-122-31-170-69-8 3-18 4-30 4-29 0-55-13-72-34-14-17-22-39-22-62 0-40 22-74 56-92 15-8 33-12 54-12h10z"/>
+
+    <!-- Snout -->
+    <path d="M228 642c0-40 40-72 90-72s90 32 90 72-40 72-90 72-90-32-90-72z"/>
+    <path d="M290 642h0"/>
+    <path d="M340 642h0"/>
+
+    <!-- Ear -->
+    <path d="M446 338c-10-52 8-112 44-154 56 26 96 72 112 128"/>
+
+    <!-- Tail -->
+    <path d="M844 560c58-10 98-54 110-118"/>
+
+    <!-- Legs -->
+    <path d="M372 824v92"/>
+    <path d="M690 824v92"/>
+
+    <!-- Coin slot -->
+    <path d="M506 404h170"/>
+
+    <!-- Eye -->
+    <path d="M560 538h2"/>
+  </g>
+
+  <!-- Subtle ×2 mark -->
+  <g opacity="0.22">
+    <text x="428" y="720" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+          font-size="150" font-weight="800" fill="#111827">×2</text>
+  </g>
+</svg>
