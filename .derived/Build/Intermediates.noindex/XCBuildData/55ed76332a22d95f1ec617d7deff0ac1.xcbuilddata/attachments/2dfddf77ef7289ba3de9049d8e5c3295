@@ -1,0 +1,389 @@
+{
+  "" : {
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpend-primary.dia",
+    "emit-module-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpend-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpend-primary-emit-module.dia",
+    "pch" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpend-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpend-primary.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/AppState/AppSettingsStore.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/AppState/GameStateStore.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/GameStateStore~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/DI/AppContainer.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/DreamSpendApp.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DreamSpendApp~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/Navigation/AppRouter.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/RootView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/RootView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Extensions/Date+LocalDay.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Date+LocalDay~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Models/Achievement.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Achievement~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Models/DayEntry.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DayEntry~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Models/Enums.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Enums~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Models/Settings.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/Settings~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Models/SpendItem.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SpendItem~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/Achievements/AchievementService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementService~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/Date/CalendarService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CalendarService~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/FX/ApproxFXService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/FX/LiveFXService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LiveFXService~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/Localization/LanguageService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/LanguageService~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/Notifications/NotificationService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/NotificationService~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/Persistence/PersistenceController.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PersistenceController~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/Streak/StreakService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/StreakService~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Utils/CurrencyFormatter.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CurrencyFormatter~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Utils/L10n.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/L10n~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Utils/MinorUnits.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/MinorUnits~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Achievements/AchievementsView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Achievements/AchievementsViewModel.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AchievementsViewModel~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Celebration/CelebrationView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Celebration/CelebrationViewModel.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/CelebrationViewModel~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/DaySpends/DaySpendsView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/DaySpends/DaySpendsViewModel.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/DaySpendsViewModel~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/History/HistoryView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/History/HistoryViewModel.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/HistoryViewModel~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Settings/SettingsView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Settings/SettingsViewModel.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/SettingsViewModel~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Shared/EmptyStateView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/EmptyStateView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Shared/PrimaryButton.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/PrimaryButton~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Shared/ProgressHeader.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ProgressHeader~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Today/TodayView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayView~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/Today/TodayViewModel.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/TodayViewModel~partial.swiftmodule"
+  }
+}

@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'DreamSpendTests' in project 'DreamSpend'
+➜ Explicit dependency on target 'DreamSpend' in project 'DreamSpend'
+Target 'DreamSpend' in project 'DreamSpend' (no dependencies)

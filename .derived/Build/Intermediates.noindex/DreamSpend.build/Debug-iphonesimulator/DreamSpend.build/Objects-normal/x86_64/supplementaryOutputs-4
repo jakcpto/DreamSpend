@@ -1,0 +1,30 @@
+{
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/AppState/AppSettingsStore.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppSettingsStore.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/DI/AppContainer.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppContainer.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/App/Navigation/AppRouter.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/AppRouter.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Services/FX/ApproxFXService.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/x86_64/ApproxFXService.swiftdeps"
+  }
+}

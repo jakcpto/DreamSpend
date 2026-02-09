@@ -1,0 +1,30 @@
+{
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Extensions/Date+LocalDay.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/Date+LocalDay.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/Date+LocalDay.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/Date+LocalDay.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/Date+LocalDay.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/Date+LocalDay.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Core/Models/DayEntry.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DayEntry.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DayEntry.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DayEntry.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DayEntry.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DayEntry.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/DaySpends/DaySpendsView.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsView.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsView.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsView.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsView.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsView.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Features/DaySpends/DaySpendsViewModel.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsViewModel.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsViewModel.dia",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsViewModel.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpend.build/Objects-normal/arm64/DaySpendsViewModel.swiftdeps"
+  }
+}

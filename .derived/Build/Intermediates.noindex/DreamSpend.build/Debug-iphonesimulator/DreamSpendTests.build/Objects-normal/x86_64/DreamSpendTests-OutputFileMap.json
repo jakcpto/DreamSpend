@@ -1,0 +1,49 @@
+{
+  "" : {
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DreamSpendTests-primary.dia",
+    "emit-module-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DreamSpendTests-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DreamSpendTests-primary-emit-module.dia",
+    "pch" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DreamSpendTests-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DreamSpendTests-primary.swiftdeps"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Tests/TestDoubles/InMemoryStores.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/InMemoryStores~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Tests/Unit/DayProgression/DayProgressionTests.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/DayProgressionTests~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Tests/Unit/FXConversion/FXConversionTests.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/FXConversionTests~partial.swiftmodule"
+  },
+  "/Users/evgeniy/LocalUnbackuped/DreamSpend/DreamSpend/Tests/Unit/Streak/StreakResetTests.swift" : {
+    "const-values" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests.swiftconstvalues",
+    "dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests.d",
+    "diagnostics" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests.dia",
+    "index-unit-output-path" : "/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests.o",
+    "llvm-bc" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests.bc",
+    "object" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests.o",
+    "swift-dependencies" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests.swiftdeps",
+    "swiftmodule" : "/Users/evgeniy/LocalUnbackuped/DreamSpend/.derived/Build/Intermediates.noindex/DreamSpend.build/Debug-iphonesimulator/DreamSpendTests.build/Objects-normal/x86_64/StreakResetTests~partial.swiftmodule"
+  }
+}

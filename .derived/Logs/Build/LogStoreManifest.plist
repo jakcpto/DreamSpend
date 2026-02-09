@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>12</integer>
+	<key>logs</key>
+	<dict>
+		<key>B8FD37B3-4AE3-4800-98AC-458D771482B8</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B8FD37B3-4AE3-4800-98AC-458D771482B8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>12</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>DreamSpend project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>DreamSpend</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project DreamSpend for testing with scheme DreamSpend</string>
+			<key>timeStartedRecording</key>
+			<real>792322470.666587</real>
+			<key>timeStoppedRecording</key>
+			<real>792322471.84842598</real>
+			<key>title</key>
+			<string>Building project DreamSpend for testing with scheme DreamSpend</string>
+			<key>uniqueIdentifier</key>
+			<string>B8FD37B3-4AE3-4800-98AC-458D771482B8</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
