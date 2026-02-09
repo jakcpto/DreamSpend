@@ -93,4 +93,8 @@ final class SettingsViewModel: ObservableObject {
             fxStatusMessage = L10n.text("settings.fx.failed", language)
         }
     }
+
+    func resetProgress() {
+        gameStore.restartGame()
+    }
 }

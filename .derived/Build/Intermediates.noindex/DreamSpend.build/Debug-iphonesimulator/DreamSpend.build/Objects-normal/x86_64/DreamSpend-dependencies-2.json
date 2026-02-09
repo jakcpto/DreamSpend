@@ -6,6 +6,11 @@
   },
   {
     "isFramework" : true,
+    "moduleName" : "Charts",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/iphonesimulator\/prebuilt-modules\/26.2\/Charts.swiftmodule\/x86_64-apple-ios-simulator.swiftmodule"
+  },
+  {
+    "isFramework" : true,
     "moduleName" : "Combine",
     "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/iphonesimulator\/prebuilt-modules\/26.2\/Combine.swiftmodule\/x86_64-apple-ios-simulator.swiftmodule"
   },
@@ -191,392 +196,392 @@
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Accessibility.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Accessibility-ARIJM1AQFL2IASBWPD1BV5AHN.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Accessibility-1Z8TTQRKI1ZQNY0J3803ULJK5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Accessibility"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CFNetwork.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CFNetwork-A9FE43SP9C6KSERCRTQ23WIWY.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CFNetwork-AG212AQ17MDZS3V3IMQ8SWS0X.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CFNetwork"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreData.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreData-1H5T9RZZJXJULLH3DAAMR883O.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreData-CM7QNOGF89J0J29JIV8ZZRCCK.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreData"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreFoundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreFoundation-6ZT089UTIQU42HB2HHLL1JAHJ.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreFoundation-D9E63TSWQUBZPGCY55HUNTDH5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreFoundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreGraphics.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreGraphics-D6PANI09TRD57ZA02EHDAWP1I.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreGraphics-FEZV7DS93MM7T2VC99J2D66B.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreGraphics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreImage.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreImage-4R7X2ABITZKYY5WS4YU9CY6A5.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreImage-E49V62H6CTRI09MG5Z1MZOL0O.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreImage"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreText.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreText-A4W4WFZIWL2GMG59BVK6X47FJ.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreText-BRW5PT6LZ9Z52SERTRVLMHEZG.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreText"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreTransferable.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreTransferable-ADRLQKS8DIP2MLANVGYC6Y2G6.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreTransferable-75O8ECMY0NREPML2FNHPCKL7X.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreTransferable"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreVideo.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreVideo-66CVMUGWCX0LH1YLRU0079LAC.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/CoreVideo-5BJGN186G75T0C37YOQ4UESPX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreVideo"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/Darwin.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Darwin-BJDMKPQ2GDED2T27RV71NGTNQ.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Darwin-3R2JJKAJ6R543RV1H44T0OKQK.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Darwin"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/DataDetection.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/DataDetection-4C6PGZ3PXRV21TLF1XR2LYH2W.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/DataDetection-1UNGDYGBGS8V7PE8IH4D21FUJ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DataDetection"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/DeveloperToolsSupport.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/DeveloperToolsSupport-E28MUS0FXU7XH6QTM8SCWLO88.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/DeveloperToolsSupport-WDCYSGCRRKS137AKHT04GBDK.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DeveloperToolsSupport"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/dispatch.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Dispatch-3Z9FXGTWOV5B3B8SW68T0D1HB.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Dispatch-6SH2LC0F3SVSSSPYPPTMX2U8E.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Dispatch"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/FileProvider.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/FileProvider-6BTQTA4RT96XQHH09K1GMDQZS.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/FileProvider-29LM300VXHRKPBA78CHF9ZW9U.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "FileProvider"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Foundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Foundation-B394Y9LCU1O8DEYKXSV1WN9PA.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Foundation-Q6BNZP4KOBHPRVNBALBGW4QV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Foundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/IOSurface.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/IOSurface-8E49MQNTJBJKU84XYG8F88N2E.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/IOSurface-7LBY2VBGE3EYY08972XIYP74I.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "IOSurface"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/ImageIO.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ImageIO-4JNES6PMFPL3OEXZCPNUNQQNI.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ImageIO-AN7R1YDTKIR42302KJJWST86N.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ImageIO"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinBasic.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/MachO-B8RT29AZTD8S37YHA2QINIX9G.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/MachO-5BB8357BDGUPUNFW8OO47WDTQ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "MachO"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Metal.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Metal-A2A2T923M1PA4WYOLQFFT0WF6.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Metal-D75EOL42P6PN9X0MC47LZJ0K8.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Metal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/OSLog.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/OSLog-DWGKBA434CKEUP5FOVORY36EB.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/OSLog-4JVS2MQG08VIAWLEAWAVDU4M1.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OSLog"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/ObjectiveC.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ObjectiveC-2I1TOGQJVP90E43PQ9KYCLL47.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ObjectiveC-BAM8EPIXUEKP1AU9UAO0BX3QM.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ObjectiveC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/OpenGLES.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/OpenGLES-COIG2L2OZZWGXCNQYXTIUSUN.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/OpenGLES-C5FJI3BQIHLYX77I3B5JUXZLE.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OpenGLES"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/QuartzCore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/QuartzCore-3FWWMVSY40VQZIEB7JEYWR7V8.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/QuartzCore-6XV2IXOZSYF9K0IY7FS247YLQ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "QuartzCore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Security.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Security-822ITC6QWJKKCO872DQXJN15X.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Security-6RWSTOUZFGNYYRHI2NJZHRWIM.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Security"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/Spatial\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Spatial-EHI6EZIT2TF505HQMN2N4JVTL.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Spatial-AJ2AFCG2MNUTCDS58KOOM4NIE.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Spatial"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/SwiftShims-ARSEFQQEJ3V0JTD84XM48NWMW.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/SwiftShims-8V9J29N5M83LDUY5RPIBBHOGA.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftShims"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/SwiftUI.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/SwiftUI-VE2HANP94OR6J6XV2LCW4SPI.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/SwiftUI-5CEW3P6D3SJSCE0GBC89164W6.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUI"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/SwiftUICore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/SwiftUICore-8H1LP8FZXLRZ73T8QR7INVG29.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/SwiftUICore-8T75A9SNJQJPNUV02DCNQWL2F.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUICore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Symbols.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Symbols-9IUPGXK59YZMVXHPBOWMV5NLL.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/Symbols-CMI88HSZQ4L8P4L1QHSDX9E3L.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Symbols"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/UIKit.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UIKit-4Q4I4ZRU662CI8X9RLJWQRU3C.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UIKit-8IQ3THJUTI19DI5H083SI5Z4Q.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UIKit"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/SubFrameworks\/UIUtilities.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UIUtilities-AS568K28QTGJ7A8UIANI86ON9.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UIUtilities-7G26P4M1T5TB8AY0NZSGBKU1L.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UIUtilities"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/UniformTypeIdentifiers.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UniformTypeIdentifiers-3A2WB0E661JBY4GNSOJTTUGBW.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UniformTypeIdentifiers-7TXB1UMDJ9Q5BLTU8JJKSH7M9.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UniformTypeIdentifiers"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/UserNotifications.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UserNotifications-ACCLSK6AU3K8EP9PZ1X47RRYO.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/UserNotifications-2ZCYCK3YLLWSU8TF8EPAM7BI3.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UserNotifications"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/xpc.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/XPC-2027QVY39F5H7PAOTV70TSIBC.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/XPC-E5Q3EIKIEOG01EFEK8CRYVKMH.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "XPC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_AvailabilityInternal-9S83550RSM71VJ92J876OOIVT.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_AvailabilityInternal-F4DM7V8JBWWOP8UAECY30GAAY.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_AvailabilityInternal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_float-4K2J9OCPTMZVYUIF9BBXIHNW8.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_float-3ABMMU5UGJHH5PKNUG1B42ZBV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_float"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_intrinsics-79VJBKTZ9C1OMZSMQXDXDY7LX.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_intrinsics-1QPSZ222TAX9QIXEMIFS3WZTB.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_intrinsics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_inttypes-7WOMGGN8MJROULFASNPRCH8MP.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_inttypes-5IGLV71LFE7NG0YQKIW55CCDZ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_inttypes"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_limits-6G3XN12U7J44WVN8TF13II7WC.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_limits-3XDZCCIQ3TURRA41R4QOIVGBM.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_limits"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdarg-L0L5VA1KA0X8FQ2W7MFZZ299.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdarg-9ZJ7U9G0N05UPKG9NOQL09AG5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdarg"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdatomic-CK7QTARVEZVRVE910ON4NO0L.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdatomic-3QZ87MEYX092DGWO2KSQMR1K.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdatomic"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdbool-BRVO1Z14135WJZGF71S956TJP.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdbool-9MBTCB407UC01YOEA7XIDJQ9H.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdbool"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stddef-AW3GTAZ625THOW5JKL6SVWPQW.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stddef-60TZUK93HT3TEHE42E6Y5YEWB.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stddef"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdint-5FOJ4ZWDI6QMAZ1QSHL5OZI4S.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_stdint-4WLP5077PBOPQQFPI8JSPOPNC.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdint"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_tgmath-764J5WZFAYMPY0B6HGT6OR6VM.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_Builtin_tgmath-E878ZI717IK20ITI8QP3J86P.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_tgmath"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_DarwinFoundation1-ABKBWK1IOBAMR9PRS34GNFMKX.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_DarwinFoundation1-F13G5VPMPM2ZGSA1ZSFFW5VD7.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation1"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_DarwinFoundation2-B9QFAN0QO1MX395ZQYKTMU3C.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_DarwinFoundation2-A8T13YEHJR5UBKCKYJEGYGHTK.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation2"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation3.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_DarwinFoundation3-5E6N5WFNWAQ3VZQK031TVNBNF.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_DarwinFoundation3-DZB5QRIQUPO5U6N0C7R83ZTPQ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation3"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_SwiftConcurrencyShims-EHOL0ZQN1OCBDRZM9CX7CG8A2.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/_SwiftConcurrencyShims-8S0JPCVP7UJF9VV98UR00ZKBT.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_SwiftConcurrencyShims"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/os-890FEI4IR6POF3QP33H7UVEOM.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/os-EH7HWOBBBQ5DUU4VRXWQKV8X4.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/os_object-8WMRUZMYKW2D6L0D4LZLQI43T.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/os_object-SO1EBFER09D4C3RX0TWD03VM.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_object"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/os_workgroup-EG01BL7FWJQPYXN8PZJ1FG89K.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/os_workgroup-4UPSKD7DVW2QOI5BD6NX8V16E.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_workgroup"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ptrauth-93I8DZEY8CL3WIPE7N1T1BYL0.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ptrauth-AFKW6IHFGRB883EW3IHMNI2RP.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrauth"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ptrcheck-BZ9C96HSDZPDFA7PJ5VE1US5X.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/ptrcheck-CACB0XV03Q4XLSH4EWX6MGW6Y.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrcheck"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/simd\/module.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/simd-21SN9N0EPG6AWUS6L089RA4NH.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/simd-DUJ653UE6X12X11NPPNJXD4NH.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "simd"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/sys_types-4QY4C9JJTC5VCMAYP3JUXH612.pcm",
+    "clangModulePath" : "\/Users\/evgeniy\/LocalUnbackuped\/DreamSpend\/.derived\/ModuleCache.noindex\/sys_types-BOETI3MBRKG8D65F886X6OHN1.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "sys_types"

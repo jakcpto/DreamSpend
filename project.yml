@@ -19,11 +19,11 @@ targets:
       - path: DreamSpend/App
       - path: DreamSpend/Core
       - path: DreamSpend/Features
-    resources:
       - path: DreamSpend/Resources
+        buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.evgeniy.DreamSpend
+        PRODUCT_BUNDLE_IDENTIFIER: com.teccod.DreamSpend
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_CFBundleDisplayName: DreamSpend
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES

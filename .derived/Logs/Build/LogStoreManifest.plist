@@ -6,7 +6,7 @@
 	<integer>12</integer>
 	<key>logs</key>
 	<dict>
-		<key>B8FD37B3-4AE3-4800-98AC-458D771482B8</key>
+		<key>2F8BEB79-5870-4B10-BEDB-DD68411F948E</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,17 +15,17 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>B8FD37B3-4AE3-4800-98AC-458D771482B8.xcactivitylog</string>
+			<string>2F8BEB79-5870-4B10-BEDB-DD68411F948E.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>E</string>
+				<string>S</string>
 				<key>totalNumberOfAnalyzerIssues</key>
 				<integer>0</integer>
 				<key>totalNumberOfErrors</key>
-				<integer>12</integer>
+				<integer>0</integer>
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
@@ -38,15 +38,15 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Building project DreamSpend for testing with scheme DreamSpend</string>
+			<string>Building project DreamSpend with scheme DreamSpend and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>792322470.666587</real>
+			<real>792336630.61467195</real>
 			<key>timeStoppedRecording</key>
-			<real>792322471.84842598</real>
+			<real>792336633.61606503</real>
 			<key>title</key>
-			<string>Building project DreamSpend for testing with scheme DreamSpend</string>
+			<string>Building project DreamSpend with scheme DreamSpend and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>B8FD37B3-4AE3-4800-98AC-458D771482B8</string>
+			<string>2F8BEB79-5870-4B10-BEDB-DD68411F948E</string>
 		</dict>
 	</dict>
 </dict>

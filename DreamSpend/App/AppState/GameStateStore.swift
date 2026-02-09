@@ -140,11 +140,14 @@ final class GameStateStore: ObservableObject {
             return false
         }
 
+        let wasFilledBeforeSave = days[index].status == .filled
         days[index].items = items
         days[index].status = .filled
         draftItemsByDayIndex.removeValue(forKey: days[index].dayIndex)
         mergeCategories(from: items)
-        currentStreak = streakService.nextStreak(current: currentStreak, didFillToday: true)
+        if !wasFilledBeforeSave {
+            currentStreak = streakService.nextStreak(current: currentStreak, didFillToday: true)
+        }
 
         let maxForCurrency = maximumAmount(for: days[index].currencyCode)
         let reachedMaximum = days[index].dailyLimitMinor >= maxForCurrency
@@ -163,6 +166,31 @@ final class GameStateStore: ObservableObject {
             }
         }
 
+        persist()
+        return true
+    }
+
+    func saveSpends(items: [SpendItem], for dayIndex: Int, now: Date = Date()) -> Bool {
+        ensureTodayEntry(now: now)
+
+        guard let index = days.firstIndex(where: { $0.dayIndex == dayIndex }) else {
+            return false
+        }
+
+        let total = items.reduce(0) { $0 + $1.amountMinor }
+        let allowed = maxAllowedTotal(for: days[index].dailyLimitMinor)
+        guard total <= allowed else {
+            return false
+        }
+
+        if let todayIndex = todayEntry?.dayIndex, todayIndex == dayIndex {
+            return saveToday(items: items, now: now)
+        }
+
+        days[index].items = items
+        days[index].status = items.isEmpty ? .missed : .filled
+        draftItemsByDayIndex.removeValue(forKey: days[index].dayIndex)
+        mergeCategories(from: items)
         persist()
         return true
     }

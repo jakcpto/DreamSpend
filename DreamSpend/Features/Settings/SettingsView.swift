@@ -8,6 +8,8 @@ struct SettingsView: View {
     @State private var startAmountText: String = ""
     @State private var maxAmountText: String = ""
     @State private var fxRateText: String = ""
+    @State private var showResetConfirmation = false
+    @State private var showFXSavedState = false
 
     private var language: SupportedLanguage {
         viewModel.language
@@ -74,7 +76,15 @@ struct SettingsView: View {
                         if let rate = Decimal(string: fxRateText.replacingOccurrences(of: ",", with: ".")) {
                             let pair = viewModel.manualFXPair
                             viewModel.settingsStore.setFXRate(source: pair.source, target: pair.target, rate: rate)
+                            triggerFXSavedAnimation()
                         }
+                    }
+                    .overlay(alignment: .trailing) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundStyle(.green)
+                            .scaleEffect(showFXSavedState ? 1 : 0.1)
+                            .opacity(showFXSavedState ? 1 : 0)
+                            .animation(.spring(response: 0.28, dampingFraction: 0.78), value: showFXSavedState)
                     }
 
                     Button(L10n.text("settings.fx.fetch", language)) {
@@ -104,8 +114,30 @@ struct SettingsView: View {
                             )
                         }
                 }
+
+                Section {
+                    Button(role: .destructive) {
+                        showResetConfirmation = true
+                    } label: {
+                        Text(L10n.text("settings.resetAll", language))
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                } footer: {
+                    Text(L10n.text("settings.resetAll.hint", language))
+                }
             }
             .navigationTitle(L10n.text("settings.title", language))
+            .alert(
+                L10n.text("settings.resetAll.confirm.title", language),
+                isPresented: $showResetConfirmation
+            ) {
+                Button(L10n.text("common.cancel", language), role: .cancel) {}
+                Button(L10n.text("settings.resetAll", language), role: .destructive) {
+                    viewModel.resetProgress()
+                }
+            } message: {
+                Text(L10n.text("settings.resetAll.confirm.message", language))
+            }
             .onAppear {
                 notificationsEnabled = viewModel.settings.notificationsEnabled
                 var components = DateComponents()
@@ -139,5 +171,12 @@ struct SettingsView: View {
         let max = MinorUnits.toMajor(viewModel.settings.maxAmountMinor(for: currentLanguage), currencyCode: currency)
         startAmountText = NSDecimalNumber(decimal: start).stringValue
         maxAmountText = NSDecimalNumber(decimal: max).stringValue
+    }
+
+    private func triggerFXSavedAnimation() {
+        showFXSavedState = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+            showFXSavedState = false
+        }
     }
 }

@@ -4,6 +4,7 @@ import Combine
 @MainActor
 final class DaySpendsViewModel: ObservableObject {
     let store: GameStateStore
+    let targetDayIndex: Int?
 
     @Published private(set) var draftItems: [SpendItem] = []
     @Published private(set) var editingItemID: UUID?
@@ -11,15 +12,16 @@ final class DaySpendsViewModel: ObservableObject {
     private var editingIndex: Int?
     private var cancellables: Set<AnyCancellable> = []
 
-    init(store: GameStateStore) {
+    init(store: GameStateStore, dayIndex: Int? = nil) {
         self.store = store
+        self.targetDayIndex = dayIndex
 
-        if let today = store.todayEntry {
-            let savedDraft = store.draftItems(for: today.dayIndex)
+        if let dayEntry = resolvedDayEntry {
+            let savedDraft = store.draftItems(for: dayEntry.dayIndex)
             if !savedDraft.isEmpty {
                 self.draftItems = savedDraft
             } else {
-                self.draftItems = today.items
+                self.draftItems = dayEntry.items
             }
         } else {
             self.draftItems = []
@@ -35,11 +37,16 @@ final class DaySpendsViewModel: ObservableObject {
     }
 
     var currentDayIndex: Int? {
-        store.todayEntry?.dayIndex
+        targetDayIndex ?? store.todayEntry?.dayIndex
+    }
+
+    var resolvedDayEntry: DayEntry? {
+        guard let dayIndex = currentDayIndex else { return nil }
+        return store.days.first(where: { $0.dayIndex == dayIndex })
     }
 
     var limitMinor: Int64 {
-        store.todayEntry?.dailyLimitMinor ?? 0
+        resolvedDayEntry?.dailyLimitMinor ?? 0
     }
 
     var allowedTotalMinor: Int64 {
@@ -47,7 +54,7 @@ final class DaySpendsViewModel: ObservableObject {
     }
 
     var currencyCode: String {
-        store.todayEntry?.currencyCode ?? store.settings.currencyCode(for: store.settings.languageCode)
+        resolvedDayEntry?.currencyCode ?? store.settings.currencyCode(for: store.settings.languageCode)
     }
 
     var totalMinor: Int64 {
@@ -127,7 +134,8 @@ final class DaySpendsViewModel: ObservableObject {
 
     @discardableResult
     func save() -> Bool {
-        store.saveToday(items: draftItems)
+        guard let dayIndex = currentDayIndex else { return false }
+        return store.saveSpends(items: draftItems, for: dayIndex)
     }
 
     private func clearEditing() {
