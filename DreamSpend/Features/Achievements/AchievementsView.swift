@@ -17,7 +17,10 @@ struct AchievementsView: View {
                         Text(L10n.text("achievements.analytics.empty", language))
                             .foregroundStyle(.secondary)
                     } else {
-                        Chart(viewModel.categorySlices) { slice in
+                        let slices = viewModel.categorySlices
+                        let chartColors = slices.map { CategoryPalette.color(for: viewModel.colorToken(for: $0.name)) }
+
+                        Chart(slices) { slice in
                             SectorMark(
                                 angle: .value("Share", slice.share),
                                 innerRadius: .ratio(0.58),
@@ -26,8 +29,8 @@ struct AchievementsView: View {
                             .foregroundStyle(by: .value("Category", slice.name))
                         }
                         .chartForegroundStyleScale(
-                            domain: viewModel.categorySlices.map(\.name),
-                            range: categoryPalette
+                            domain: slices.map(\.name),
+                            range: chartColors
                         )
                         .frame(height: 220)
                         .contentShape(Rectangle())
@@ -38,10 +41,10 @@ struct AchievementsView: View {
                         }
 
                         VStack(alignment: .leading, spacing: 8) {
-                            ForEach(viewModel.categorySlices) { slice in
+                            ForEach(Array(slices.enumerated()), id: \.element.id) { index, slice in
                                 HStack {
                                     RoundedRectangle(cornerRadius: 2)
-                                        .fill(categoryPalette[viewModel.colorIndex(for: slice)])
+                                        .fill(chartColors[index])
                                         .frame(width: 12, height: 12)
                                     Text(slice.name)
                                     Spacer()
@@ -106,9 +109,5 @@ struct AchievementsView: View {
         case .en: return "\(days)-day streak"
         case .de: return "Serie \(days) Tage"
         }
-    }
-
-    private var categoryPalette: [Color] {
-        [.blue, .green, .orange, .pink, .teal, .indigo, .yellow, .mint, .cyan, .red, .brown, .gray]
     }
 }

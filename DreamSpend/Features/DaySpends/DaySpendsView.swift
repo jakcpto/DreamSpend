@@ -8,6 +8,9 @@ struct DaySpendsView: View {
     @State private var category: String = ""
     @State private var amountText: String = ""
     @State private var animateAdd: Bool = false
+    @State private var selectedCategoryForEditing: String = ""
+    @State private var categoryDraftName: String = ""
+    @State private var isCategoryEditorPresented: Bool = false
 
     @FocusState private var focusedField: Field?
 
@@ -62,31 +65,9 @@ struct DaySpendsView: View {
                 }
 
                 if !viewModel.categorySuggestions.isEmpty {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
-                            ForEach(viewModel.categorySuggestions, id: \.self) { suggestion in
-                                HStack(spacing: 6) {
-                                    Button(suggestion) {
-                                        category = suggestion
-                                        focusedField = .title
-                                    }
-                                    .buttonStyle(.bordered)
-
-                                    if !viewModel.isDefaultCategory(suggestion) {
-                                        Button {
-                                            viewModel.removeCategory(suggestion)
-                                            if category.caseInsensitiveCompare(suggestion) == .orderedSame {
-                                                category = ""
-                                            }
-                                        } label: {
-                                            Image(systemName: "xmark")
-                                                .font(.caption2.bold())
-                                        }
-                                        .buttonStyle(.plain)
-                                        .accessibilityLabel(L10n.removeCategory(suggestion, language))
-                                    }
-                                }
-                            }
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 8)], alignment: .leading, spacing: 8) {
+                        ForEach(viewModel.categorySuggestions, id: \.self) { suggestion in
+                            categoryChip(for: suggestion)
                         }
                     }
                 }
@@ -197,6 +178,92 @@ struct DaySpendsView: View {
                     }
                 }
                 .disabled(!viewModel.canSave)
+            }
+        }
+        .sheet(isPresented: $isCategoryEditorPresented) {
+            NavigationStack {
+                Form {
+                    Section {
+                        TextField(L10n.text("spends.category", language), text: $categoryDraftName)
+                    }
+
+                    Section {
+                        Button {
+                            viewModel.cycleCategoryColor(selectedCategoryForEditing)
+                        } label: {
+                            HStack {
+                                Circle()
+                                    .fill(CategoryPalette.color(for: viewModel.colorToken(for: selectedCategoryForEditing)))
+                                    .frame(width: 18, height: 18)
+                                Text(language == .ru ? "Сменить цвет" : (language == .de ? "Farbe wechseln" : "Change color"))
+                            }
+                        }
+                    }
+                }
+                .navigationTitle(language == .ru ? "Тег" : (language == .de ? "Kategorie" : "Category"))
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(L10n.text("spends.cancel.edit", language)) {
+                            isCategoryEditorPresented = false
+                        }
+                    }
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button(L10n.text("spends.update", language)) {
+                            let previousName = selectedCategoryForEditing
+                            let updatedName = categoryDraftName
+                            viewModel.renameCategory(previousName, to: updatedName)
+                            if category.caseInsensitiveCompare(previousName) == .orderedSame {
+                                category = updatedName.trimmingCharacters(in: .whitespacesAndNewlines)
+                            }
+                            isCategoryEditorPresented = false
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func categoryChip(for suggestion: String) -> some View {
+        HStack(spacing: 6) {
+            Text(suggestion)
+                .font(.subheadline)
+                .lineLimit(1)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(
+                    Capsule()
+                        .fill(CategoryPalette.color(for: viewModel.colorToken(for: suggestion)).opacity(0.16))
+                )
+                .overlay(
+                    Capsule()
+                        .stroke(CategoryPalette.color(for: viewModel.colorToken(for: suggestion)).opacity(0.4), lineWidth: 1)
+                )
+                .contentShape(Capsule())
+                .onTapGesture(count: 2) {
+                    guard !viewModel.isDefaultCategory(suggestion) else { return }
+                    selectedCategoryForEditing = suggestion
+                    categoryDraftName = suggestion
+                    isCategoryEditorPresented = true
+                }
+                .onTapGesture {
+                    category = suggestion
+                    focusedField = .title
+                }
+
+            if !viewModel.isDefaultCategory(suggestion) {
+                Button {
+                    viewModel.removeCategory(suggestion)
+                    if category.caseInsensitiveCompare(suggestion) == .orderedSame {
+                        category = ""
+                    }
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.caption2.bold())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(L10n.removeCategory(suggestion, language))
             }
         }
     }

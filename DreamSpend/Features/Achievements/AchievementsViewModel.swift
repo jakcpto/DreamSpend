@@ -81,8 +81,8 @@ final class AchievementsViewModel: ObservableObject {
         String(format: "%.1f%%", slice.share * 100)
     }
 
-    func colorIndex(for slice: CategorySlice) -> Int {
-        Int(UInt(bitPattern: slice.id.hashValue) % 12)
+    func colorToken(for category: String) -> String {
+        store.colorToken(for: category)
     }
 
     private var filledDaysRange: [DayEntry] {

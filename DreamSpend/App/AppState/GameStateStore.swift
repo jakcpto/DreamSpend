@@ -21,6 +21,8 @@ final class GameStateStore: ObservableObject {
     @Published var showCelebration: Bool
     @Published var draftItemsByDayIndex: [Int: [SpendItem]]
     @Published var customCategories: [String]
+    @Published var customCategoryColors: [String: String]
+    private var midnightTask: Task<Void, Never>?
 
     static let defaultCategoriesByLanguage: [SupportedLanguage: [String]] = [
         .ru: ["Еда", "Транспорт", "Дом", "Одежда", "Развлечения", "Подарки", "Здоровье", "Путешествия"],
@@ -54,6 +56,7 @@ final class GameStateStore: ObservableObject {
             self.isPausedAfterMaximum = snapshot.isPausedAfterMaximum
             self.draftItemsByDayIndex = Dictionary(uniqueKeysWithValues: (snapshot.draftBuckets ?? []).map { ($0.dayIndex, $0.items) })
             self.customCategories = snapshot.customCategories ?? []
+            self.customCategoryColors = snapshot.customCategoryColors ?? [:]
         } else {
             let defaultSettings = Settings.default
             self.settings = defaultSettings
@@ -66,6 +69,7 @@ final class GameStateStore: ObservableObject {
             self.isPausedAfterMaximum = false
             self.draftItemsByDayIndex = [:]
             self.customCategories = []
+            self.customCategoryColors = [:]
         }
 
         self.showCelebration = false
@@ -73,6 +77,7 @@ final class GameStateStore: ObservableObject {
             settings.maxBehavior = .resetAndRestart
         }
         ensureTodayEntry()
+        startMidnightWatcher()
     }
 
     var todayEntry: DayEntry? {
@@ -216,6 +221,7 @@ final class GameStateStore: ObservableObject {
         let value = normalizedCategory(category)
         guard !value.isEmpty else { return }
         customCategories = Self.uniqueCategories(customCategories + [value])
+        assignColorIfNeeded(for: value)
         persist()
     }
 
@@ -223,7 +229,59 @@ final class GameStateStore: ObservableObject {
         let value = normalizedCategory(category)
         guard !value.isEmpty else { return }
         customCategories.removeAll { $0.caseInsensitiveCompare(value) == .orderedSame }
+        customCategoryColors.removeValue(forKey: colorKey(for: value))
         persist()
+    }
+
+    func renameCustomCategory(_ category: String, to newName: String) {
+        let oldValue = normalizedCategory(category)
+        let newValue = normalizedCategory(newName)
+        guard !oldValue.isEmpty, !newValue.isEmpty else { return }
+
+        if oldValue.caseInsensitiveCompare(newValue) != .orderedSame {
+            customCategories = customCategories.map {
+                $0.caseInsensitiveCompare(oldValue) == .orderedSame ? newValue : $0
+            }
+
+            for dayIndex in days.indices {
+                days[dayIndex].items = days[dayIndex].items.map { item in
+                    guard item.category?.caseInsensitiveCompare(oldValue) == .orderedSame else { return item }
+                    return SpendItem(id: item.id, title: item.title, amountMinor: item.amountMinor, category: newValue)
+                }
+            }
+
+            draftItemsByDayIndex = draftItemsByDayIndex.mapValues { items in
+                items.map { item in
+                    guard item.category?.caseInsensitiveCompare(oldValue) == .orderedSame else { return item }
+                    return SpendItem(id: item.id, title: item.title, amountMinor: item.amountMinor, category: newValue)
+                }
+            }
+
+            let oldColorKey = colorKey(for: oldValue)
+            let newColorKey = colorKey(for: newValue)
+            if let token = customCategoryColors[oldColorKey] {
+                customCategoryColors.removeValue(forKey: oldColorKey)
+                customCategoryColors[newColorKey] = token
+            }
+        }
+
+        customCategories = Self.uniqueCategories(customCategories)
+        assignColorIfNeeded(for: newValue)
+        persist()
+    }
+
+    func cycleCustomCategoryColor(_ category: String) {
+        let value = normalizedCategory(category)
+        guard !value.isEmpty else { return }
+        let key = colorKey(for: value)
+        customCategoryColors[key] = CategoryPalette.nextToken(after: customCategoryColors[key])
+        persist()
+    }
+
+    func colorToken(for category: String) -> String {
+        let value = normalizedCategory(category)
+        guard !value.isEmpty else { return CategoryPalette.fallbackToken(for: category) }
+        return customCategoryColors[colorKey(for: value)] ?? CategoryPalette.fallbackToken(for: value)
     }
 
     func dismissCelebration() {
@@ -249,17 +307,10 @@ final class GameStateStore: ObservableObject {
         let oldLanguage = settings.languageCode
         guard oldLanguage != newLanguage else { return }
 
-        let result = languageService.switchLanguage(
-            amountMinor: nextDayAmountMinor,
-            from: oldLanguage,
-            to: newLanguage,
-            settings: settings
-        )
-
         settings.languageCode = newLanguage
-        nextDayAmountMinor = result.newAmountMinor
-        nextDayCurrencyCode = result.newCurrencyCode
-        pendingConversionRateUsed = result.conversionRateUsed
+        // Gameplay progression remains tied to previous day values; language switch
+        // should not alter the upcoming budget via FX conversion.
+        pendingConversionRateUsed = nil
         persist()
     }
 
@@ -297,24 +348,32 @@ final class GameStateStore: ObservableObject {
 
     private func addDay(for date: Date, status: DayStatus) {
         let nextIndex = (days.last?.dayIndex ?? 0) + 1
+        let previousDay = days.last
+        let currencyCode = previousDay?.currencyCode ?? nextDayCurrencyCode
+        let dailyLimit = previousDay.map {
+            projectedAmount(after: $0.dailyLimitMinor, currencyCode: $0.currencyCode, previousStatus: $0.status)
+        } ?? nextDayAmountMinor
+
         let day = DayEntry(
             dayIndex: nextIndex,
             date: date,
-            currencyCode: nextDayCurrencyCode,
-            dailyLimitMinor: nextDayAmountMinor,
+            currencyCode: currencyCode,
+            dailyLimitMinor: dailyLimit,
             status: status,
-            conversionRateUsed: pendingConversionRateUsed,
+            conversionRateUsed: previousDay == nil ? pendingConversionRateUsed : nil,
             items: []
         )
 
         days.append(day)
         pendingConversionRateUsed = nil
-        nextDayAmountMinor = projectedAmount(after: day.dailyLimitMinor, currencyCode: day.currencyCode)
+        nextDayCurrencyCode = day.currencyCode
+        nextDayAmountMinor = projectedAmount(after: day.dailyLimitMinor, currencyCode: day.currencyCode, previousStatus: day.status)
     }
 
     private func mergeCategories(from items: [SpendItem]) {
         let extracted = items.compactMap { $0.category }.map(normalizedCategory).filter { !$0.isEmpty }
         customCategories = Self.uniqueCategories(customCategories + extracted)
+        extracted.forEach(assignColorIfNeeded)
     }
 
     private func normalizedCategory(_ value: String) -> String {
@@ -340,7 +399,11 @@ final class GameStateStore: ObservableObject {
         draftItemsByDayIndex = draftItemsByDayIndex.filter { openIndices.contains($0.key) }
     }
 
-    private func projectedAmount(after dailyLimitMinor: Int64, currencyCode: String) -> Int64 {
+    private func projectedAmount(after dailyLimitMinor: Int64, currencyCode: String, previousStatus: DayStatus) -> Int64 {
+        if previousStatus == .missed {
+            return dailyLimitMinor
+        }
+
         let maxAmount = maximumAmount(for: currencyCode)
         let startAmount = startAmount(for: currencyCode)
 
@@ -380,8 +443,56 @@ final class GameStateStore: ObservableObject {
                 pendingConversionRateUsed: pendingConversionRateUsed,
                 isPausedAfterMaximum: isPausedAfterMaximum,
                 draftBuckets: draftItemsByDayIndex.map { DraftBucket(dayIndex: $0.key, items: $0.value) },
-                customCategories: customCategories
+                customCategories: customCategories,
+                customCategoryColors: customCategoryColors
             )
         )
+    }
+
+    private func assignColorIfNeeded(for category: String) {
+        let key = colorKey(for: category)
+        if customCategoryColors[key] == nil {
+            customCategoryColors[key] = CategoryPalette.fallbackToken(for: category)
+        }
+    }
+
+    private func colorKey(for category: String) -> String {
+        normalizedCategory(category).lowercased()
+    }
+
+    deinit {
+        midnightTask?.cancel()
+    }
+
+    private func startMidnightWatcher() {
+        midnightTask?.cancel()
+        midnightTask = Task { await runMidnightLoop() }
+    }
+
+    private func nextMidnight(after date: Date) -> Date {
+        let start = calendarService.startOfDay(date)
+        return calendarService.addDays(1, to: start)
+    }
+
+    private func runMidnightLoop() async {
+        while !Task.isCancelled {
+            let now = Date()
+            let target = nextMidnight(after: now)
+            let interval = target.timeIntervalSince(now)
+            if interval > 0 {
+                let sleepDuration = UInt64((interval * 1_000_000_000).rounded())
+                do {
+                    try await Task.sleep(nanoseconds: sleepDuration)
+                } catch {
+                    break
+                }
+            }
+
+            if Task.isCancelled {
+                break
+            }
+
+            ensureTodayEntry()
+        }
     }
 }

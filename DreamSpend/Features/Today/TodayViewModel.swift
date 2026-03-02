@@ -2,6 +2,13 @@ import Foundation
 
 @MainActor
 final class TodayViewModel {
+    struct MonthSection: Identifiable {
+        let monthStart: Date
+        let days: [DayEntry]
+
+        var id: Date { monthStart }
+    }
+
     let store: GameStateStore
 
     init(store: GameStateStore) {
@@ -17,6 +24,18 @@ final class TodayViewModel {
 
     var todayDayIndex: Int? {
         store.todayEntry?.dayIndex
+    }
+
+    var monthSections: [MonthSection] {
+        let calendar = Calendar.current
+        let grouped = Dictionary(grouping: availableDays) { day in
+            calendar.date(from: calendar.dateComponents([.year, .month], from: day.date)) ?? day.date
+        }
+
+        return grouped.keys.sorted().map { monthStart in
+            let days = (grouped[monthStart] ?? []).sorted { $0.date < $1.date }
+            return MonthSection(monthStart: monthStart, days: days)
+        }
     }
 
     func day(for dayIndex: Int?) -> DayEntry? {
@@ -44,5 +63,12 @@ final class TodayViewModel {
 
     func isFilled(day: DayEntry?) -> Bool {
         day?.status == .filled
+    }
+
+    func fillProgress(for day: DayEntry) -> Double {
+        guard day.status == .filled else { return 0 }
+        guard day.dailyLimitMinor > 0 else { return 0 }
+        let progress = Double(day.totalSpentMinor) / Double(day.dailyLimitMinor)
+        return min(max(progress, 0), 1)
     }
 }

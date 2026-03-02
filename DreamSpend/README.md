@@ -31,3 +31,18 @@ SwiftUI-приложение для игры "На что я потрачу..." 
 
 ## Важно
 - В репозитории пока нет `xcodeproj`, поэтому для полноценного `xcodebuild test` нужно создать проект и подключить эти файлы к app/test target.
+
+## Запуск на iPhone 17 из CLI
+
+Чтобы избежать ошибки `CoreSimulator runtime` при запуске из терминала, используйте запуск по `destination id` (а не по фиксированному `OS=...`).
+Команды ниже выполняйте из корня репозитория.
+
+- Сборка под симулятор `iPhone 17`:
+  - `./scripts/ios_sim_runner.sh build`
+- Тесты на симуляторе `iPhone 17`:
+  - `./scripts/ios_sim_runner.sh test`
+
+Скрипт сам находит актуальный `iPhone 17` в `xcodebuild -showdestinations` и использует `-destination id=...`.
+
+Если нужно другое устройство, передайте переменную `DEVICE_NAME`, например:
+- `DEVICE_NAME="iPhone 17 Pro" ./scripts/ios_sim_runner.sh test`

@@ -16,6 +16,7 @@ struct GameSnapshot: Codable {
     var isPausedAfterMaximum: Bool
     var draftBuckets: [DraftBucket]?
     var customCategories: [String]?
+    var customCategoryColors: [String: String]?
 }
 
 protocol PersistenceControllerProtocol {

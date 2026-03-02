@@ -128,8 +128,25 @@ final class DaySpendsViewModel: ObservableObject {
         store.removeCustomCategory(category)
     }
 
+    func renameCategory(_ category: String, to newName: String) {
+        store.renameCustomCategory(category, to: newName)
+        if let editingIndex, draftItems.indices.contains(editingIndex),
+           draftItems[editingIndex].category?.caseInsensitiveCompare(category) == .orderedSame {
+            let item = draftItems[editingIndex]
+            draftItems[editingIndex] = SpendItem(id: item.id, title: item.title, amountMinor: item.amountMinor, category: newName)
+        }
+    }
+
+    func cycleCategoryColor(_ category: String) {
+        store.cycleCustomCategoryColor(category)
+    }
+
     func isDefaultCategory(_ category: String) -> Bool {
         store.defaultCategories.contains { $0.caseInsensitiveCompare(category) == .orderedSame }
+    }
+
+    func colorToken(for category: String) -> String {
+        store.colorToken(for: category)
     }
 
     @discardableResult
