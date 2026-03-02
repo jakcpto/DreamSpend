@@ -70,6 +70,20 @@ struct SettingsView: View {
                     }
                 }
 
+                Section(L10n.text("settings.icon", language)) {
+                    Picker(
+                        L10n.text("settings.icon", language),
+                        selection: Binding(
+                            get: { viewModel.settings.appIcon },
+                            set: { viewModel.setAppIcon($0) }
+                        )
+                    ) {
+                        ForEach(AppIconOption.allCases) { appIcon in
+                            Text(appIcon.title(for: language)).tag(appIcon)
+                        }
+                    }
+                }
+
                 Section(L10n.text("settings.fx", language)) {
                     decimalTextField("\(viewModel.manualFXPair.source) -> \(viewModel.manualFXPair.target)", text: $fxRateText)
                     Button(L10n.text("settings.fx.update", language)) {

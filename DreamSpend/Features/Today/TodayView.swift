@@ -28,10 +28,18 @@ struct TodayView: View {
                         ScrollView([.horizontal, .vertical], showsIndicators: true) {
                             VStack(alignment: .leading, spacing: 12) {
                                 ForEach(viewModel.monthSections) { section in
-                                    HStack(alignment: .top, spacing: 12) {
-                                        ForEach(section.days) { day in
-                                            dateTile(for: day)
-                                                .id(day.dayIndex)
+                                    HStack(alignment: .top, spacing: 10) {
+                                        Text(viewModel.monthLabel(for: section.monthStart))
+                                            .font(.caption.bold())
+                                            .foregroundStyle(.secondary)
+                                            .frame(width: 34, alignment: .leading)
+                                            .padding(.top, 8)
+
+                                        HStack(alignment: .top, spacing: 12) {
+                                            ForEach(section.days) { day in
+                                                dateTile(for: day)
+                                                    .id(day.dayIndex)
+                                            }
                                         }
                                     }
                                 }
@@ -126,6 +134,9 @@ struct TodayView: View {
         let progress = viewModel.fillProgress(for: day)
         let tileBackground = tileBackgroundColor(for: day, isSelected: isSelected)
         let progressColor = tileProgressColor(for: day, isSelected: isSelected)
+        let glassColor = tileGlassColor(for: day, isSelected: isSelected)
+        let inset: CGFloat = 7
+        let innerHeight: CGFloat = 92 - (inset * 2)
 
         VStack(spacing: 8) {
             Text(day.date.formatted(.dateTime.day()))
@@ -143,10 +154,26 @@ struct TodayView: View {
                 RoundedRectangle(cornerRadius: 14)
                     .fill(tileBackground)
 
+                RoundedRectangle(cornerRadius: 11)
+                    .fill(glassColor)
+                    .padding(inset)
+
                 if progress > 0 {
                     RoundedRectangle(cornerRadius: 14)
                         .fill(progressColor)
-                        .frame(height: 92 * progress)
+                        .padding(inset)
+                        .frame(height: innerHeight * progress + inset, alignment: .bottom)
+                }
+
+                RoundedRectangle(cornerRadius: 11)
+                    .stroke(glassColor.opacity(isSelected ? 0.5 : 0.8), lineWidth: 1)
+                    .padding(inset)
+
+                if progress > 0 {
+                    RoundedRectangle(cornerRadius: 2)
+                        .fill(Color.white.opacity(isSelected ? 0.32 : 0.45))
+                        .frame(width: 44, height: 3)
+                        .padding(.bottom, max(inset + innerHeight * progress - 6, inset + 3))
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 14))
@@ -189,10 +216,23 @@ struct TodayView: View {
 
     private func tileProgressColor(for day: DayEntry, isSelected: Bool) -> Color {
         if isSelected {
+            if viewModel.isOverLimit(day: day) {
+                return Color.green
+            }
+            if viewModel.isNearlyFull(day: day) {
+                return Color.yellow.opacity(0.9)
+            }
             return Color.accentColor
         }
 
-        return day.status == .filled ? Color.accentColor.opacity(0.82) : Color.clear
+        guard day.status == .filled else { return Color.clear }
+        if viewModel.isOverLimit(day: day) {
+            return Color.green.opacity(0.85)
+        }
+        if viewModel.isNearlyFull(day: day) {
+            return Color.yellow.opacity(0.78)
+        }
+        return Color.accentColor.opacity(0.82)
     }
 
     private func tileBorderColor(for day: DayEntry, isSelected: Bool) -> Color {
@@ -201,6 +241,14 @@ struct TodayView: View {
         }
 
         return day.status == .missed ? Color.orange.opacity(0.32) : Color.gray.opacity(0.25)
+    }
+
+    private func tileGlassColor(for day: DayEntry, isSelected: Bool) -> Color {
+        if day.status == .missed {
+            return Color.orange.opacity(isSelected ? 0.08 : 0.05)
+        }
+
+        return Color.white.opacity(isSelected ? 0.18 : 0.12)
     }
 }
 

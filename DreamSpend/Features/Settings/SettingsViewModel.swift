@@ -6,6 +6,7 @@ final class SettingsViewModel: ObservableObject {
     let gameStore: GameStateStore
     let settingsStore: AppSettingsStore
     let notificationService: NotificationService
+    let appIconService: AppIconService
 
     @Published var fxStatusMessage: String?
 
@@ -16,11 +17,13 @@ final class SettingsViewModel: ObservableObject {
         gameStore: GameStateStore,
         settingsStore: AppSettingsStore,
         notificationService: NotificationService,
+        appIconService: AppIconService,
         liveFXService: LiveFXService = LiveFXService()
     ) {
         self.gameStore = gameStore
         self.settingsStore = settingsStore
         self.notificationService = notificationService
+        self.appIconService = appIconService
         self.liveFXService = liveFXService
 
         gameStore.objectWillChange
@@ -92,6 +95,11 @@ final class SettingsViewModel: ObservableObject {
         } catch {
             fxStatusMessage = L10n.text("settings.fx.failed", language)
         }
+    }
+
+    func setAppIcon(_ appIcon: AppIconOption) {
+        settingsStore.setAppIcon(appIcon)
+        appIconService.setAppIcon(appIcon)
     }
 
     func resetProgress() {

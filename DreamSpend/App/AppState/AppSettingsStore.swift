@@ -36,4 +36,8 @@ final class AppSettingsStore: ObservableObject {
     func setFXRate(source: String, target: String, rate: Decimal) {
         gameStore.updateFX(source: source, target: target, rate: rate)
     }
+
+    func setAppIcon(_ appIcon: AppIconOption) {
+        gameStore.updateAppIcon(appIcon)
+    }
 }

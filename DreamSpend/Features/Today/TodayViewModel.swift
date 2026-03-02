@@ -52,6 +52,15 @@ final class TodayViewModel {
         return first.uppercased() + title.dropFirst()
     }
 
+    func monthLabel(for monthStart: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: store.settings.languageCode.localeIdentifier)
+        formatter.dateFormat = "LLL"
+        let title = formatter.string(from: monthStart)
+        guard let first = title.first else { return title }
+        return first.uppercased() + title.dropFirst()
+    }
+
     func amountLabel(for day: DayEntry) -> String {
         let locale = store.settings.languageCode.localeIdentifier
         return CurrencyFormatter.format(minor: day.dailyLimitMinor, currencyCode: day.currencyCode, localeIdentifier: locale)
@@ -70,5 +79,13 @@ final class TodayViewModel {
         guard day.dailyLimitMinor > 0 else { return 0 }
         let progress = Double(day.totalSpentMinor) / Double(day.dailyLimitMinor)
         return min(max(progress, 0), 1)
+    }
+
+    func isNearlyFull(day: DayEntry) -> Bool {
+        fillProgress(for: day) >= 0.95
+    }
+
+    func isOverLimit(day: DayEntry) -> Bool {
+        day.status == .filled && day.totalSpentMinor > day.dailyLimitMinor
     }
 }

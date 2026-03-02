@@ -7,6 +7,9 @@ struct DreamSpendApp: App {
     var body: some Scene {
         WindowGroup {
             RootView(container: container)
+                .task {
+                    container.syncAppIcon()
+                }
         }
     }
 }

@@ -346,6 +346,11 @@ final class GameStateStore: ObservableObject {
         persist()
     }
 
+    func updateAppIcon(_ appIcon: AppIconOption) {
+        settings.appIcon = appIcon
+        persist()
+    }
+
     private func addDay(for date: Date, status: DayStatus) {
         let nextIndex = (days.last?.dayIndex ?? 0) + 1
         let previousDay = days.last
