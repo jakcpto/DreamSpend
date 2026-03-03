@@ -18,6 +18,17 @@ enum AppIconOption: String, Codable, CaseIterable, Sendable, Identifiable {
         }
     }
 
+    var previewAssetName: String {
+        switch self {
+        case .oldMoney:
+            return "AppIconPreviewOldMoney"
+        case .coin:
+            return "AppIconPreviewCoin"
+        case .game:
+            return "AppIconPreviewGame"
+        }
+    }
+
     func title(for language: SupportedLanguage) -> String {
         switch (self, language) {
         case (.oldMoney, .ru):

@@ -71,15 +71,9 @@ struct SettingsView: View {
                 }
 
                 Section(L10n.text("settings.icon", language)) {
-                    Picker(
-                        L10n.text("settings.icon", language),
-                        selection: Binding(
-                            get: { viewModel.settings.appIcon },
-                            set: { viewModel.setAppIcon($0) }
-                        )
-                    ) {
+                    HStack(spacing: 12) {
                         ForEach(AppIconOption.allCases) { appIcon in
-                            Text(appIcon.title(for: language)).tag(appIcon)
+                            appIconButton(appIcon)
                         }
                     }
                 }
@@ -192,5 +186,40 @@ struct SettingsView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
             showFXSavedState = false
         }
+    }
+
+    @ViewBuilder
+    private func appIconButton(_ appIcon: AppIconOption) -> some View {
+        let isSelected = viewModel.settings.appIcon == appIcon
+
+        Button {
+            viewModel.setAppIcon(appIcon)
+        } label: {
+            VStack(spacing: 6) {
+                Image(appIcon.previewAssetName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 58, height: 58)
+                    .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .stroke(
+                                isSelected ? Color.accentColor : Color.secondary.opacity(0.18),
+                                lineWidth: isSelected ? 3 : 1
+                            )
+                    }
+                    .shadow(color: .black.opacity(isSelected ? 0.12 : 0.04), radius: isSelected ? 8 : 3, y: 2)
+
+                Text(appIcon.title(for: language))
+                    .font(.caption2)
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 4)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(appIcon.title(for: language))
     }
 }

@@ -36,4 +36,14 @@ final class NotificationService {
     func clearPendingReminders() async {
         center.removePendingNotificationRequests(withIdentifiers: ["daily-reminder"])
     }
+
+    func clearDeliveredReminders() async {
+        center.removeDeliveredNotifications(withIdentifiers: ["daily-reminder"])
+    }
+
+    func refreshReminderAppearanceIfNeeded(hour: Int, minute: Int, enabled: Bool) async {
+        await clearDeliveredReminders()
+        guard enabled else { return }
+        await scheduleDailyReminder(hour: hour, minute: minute)
+    }
 }

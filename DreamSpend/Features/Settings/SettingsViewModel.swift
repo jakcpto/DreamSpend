@@ -100,6 +100,13 @@ final class SettingsViewModel: ObservableObject {
     func setAppIcon(_ appIcon: AppIconOption) {
         settingsStore.setAppIcon(appIcon)
         appIconService.setAppIcon(appIcon)
+        Task {
+            await notificationService.refreshReminderAppearanceIfNeeded(
+                hour: settings.reminderHour,
+                minute: settings.reminderMinute,
+                enabled: settings.notificationsEnabled
+            )
+        }
     }
 
     func resetProgress() {
