@@ -53,7 +53,7 @@ class PersistenceService {
     await prefs.setInt(_missesKey, misses);
   }
 
-  Future<(int streak, int misses)> loadProgressMeta() async {
+  Future<(int, int)> loadProgressMeta() async {
     final prefs = await SharedPreferences.getInstance();
     return (prefs.getInt(_streakKey) ?? 0, prefs.getInt(_missesKey) ?? 0);
   }

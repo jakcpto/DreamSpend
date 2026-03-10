@@ -80,4 +80,35 @@ final class DayProgressionTests: XCTestCase {
         XCTAssertEqual(store.days.first?.items.first?.category, "Cafe")
         XCTAssertEqual(store.draftItems(for: store.todayEntry?.dayIndex ?? 1).first?.category, "Cafe")
     }
+
+    @MainActor
+    func testDaySpendsViewModelAppliesItemsWithoutExplicitSave() {
+        let persistence = InMemoryPersistenceController()
+        let store = GameStateStore(persistence: persistence)
+        let viewModel = DaySpendsViewModel(store: store, dayIndex: store.todayEntry?.dayIndex)
+
+        viewModel.upsertItem(title: "Taxi", amountMinor: 250)
+
+        XCTAssertEqual(viewModel.draftItems.count, 1)
+        XCTAssertEqual(store.todayEntry?.items.count, 1)
+        XCTAssertEqual(store.todayEntry?.items.first?.title, "Taxi")
+        XCTAssertEqual(store.todayEntry?.status, .filled)
+    }
+
+    @MainActor
+    func testSavingEmptyTodayItemsReopensDayAndResetsStreak() {
+        let persistence = InMemoryPersistenceController()
+        let store = GameStateStore(persistence: persistence)
+        let today = store.days.last?.date ?? Date()
+
+        XCTAssertTrue(
+            store.saveToday(items: [SpendItem(title: "Lunch", amountMinor: 100)], now: today)
+        )
+        XCTAssertEqual(store.currentStreak, 1)
+
+        XCTAssertTrue(store.saveToday(items: [], now: today))
+        XCTAssertEqual(store.todayEntry?.status, .open)
+        XCTAssertEqual(store.todayEntry?.items.count, 0)
+        XCTAssertEqual(store.currentStreak, 0)
+    }
 }

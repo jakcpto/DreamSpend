@@ -3,6 +3,12 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var viewModel: SettingsViewModel
 
+    private enum Field: Hashable {
+        case startAmount
+        case maxAmount
+        case fxRate
+    }
+
     @State private var reminderTime: Date = Date()
     @State private var notificationsEnabled: Bool = false
     @State private var startAmountText: String = ""
@@ -10,6 +16,7 @@ struct SettingsView: View {
     @State private var fxRateText: String = ""
     @State private var showResetConfirmation = false
     @State private var showFXSavedState = false
+    @FocusState private var focusedField: Field?
 
     private var language: SupportedLanguage {
         viewModel.language
@@ -35,8 +42,11 @@ struct SettingsView: View {
 
                 Section(L10n.text("settings.limits", language)) {
                     decimalTextField(L10n.text("settings.start", language), text: $startAmountText)
+                        .focused($focusedField, equals: .startAmount)
                     decimalTextField(L10n.text("settings.max", language), text: $maxAmountText)
+                        .focused($focusedField, equals: .maxAmount)
                     Button(L10n.text("settings.saveLimits", language)) {
+                        focusedField = nil
                         let currentLanguage = viewModel.settings.languageCode
                         let currency = viewModel.settings.currencyCode(for: currentLanguage)
                         viewModel.settingsStore.setStartAmount(MinorUnits.fromMajor(Decimal(string: startAmountText.replacingOccurrences(of: ",", with: ".")) ?? 0, currencyCode: currency), for: currentLanguage)
@@ -80,7 +90,9 @@ struct SettingsView: View {
 
                 Section(L10n.text("settings.fx", language)) {
                     decimalTextField("\(viewModel.manualFXPair.source) -> \(viewModel.manualFXPair.target)", text: $fxRateText)
+                        .focused($focusedField, equals: .fxRate)
                     Button(L10n.text("settings.fx.update", language)) {
+                        focusedField = nil
                         if let rate = Decimal(string: fxRateText.replacingOccurrences(of: ",", with: ".")) {
                             let pair = viewModel.manualFXPair
                             viewModel.settingsStore.setFXRate(source: pair.source, target: pair.target, rate: rate)
@@ -135,6 +147,14 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle(L10n.text("settings.title", language))
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button(L10n.text("common.done", language)) {
+                        focusedField = nil
+                    }
+                }
+            }
             .alert(
                 L10n.text("settings.resetAll.confirm.title", language),
                 isPresented: $showResetConfirmation

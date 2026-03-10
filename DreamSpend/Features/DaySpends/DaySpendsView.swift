@@ -11,6 +11,8 @@ struct DaySpendsView: View {
     @State private var selectedCategoryForEditing: String = ""
     @State private var categoryDraftName: String = ""
     @State private var isCategoryEditorPresented: Bool = false
+    @State private var autosavedItemID: UUID?
+    @State private var autosaveTask: Task<Void, Never>?
 
     @FocusState private var focusedField: Field?
 
@@ -74,10 +76,11 @@ struct DaySpendsView: View {
 
                 Button {
                     withAnimation(.spring(response: 0.28, dampingFraction: 0.8)) {
-                        viewModel.upsertItem(
+                        _ = viewModel.upsertItem(
+                            id: currentEditorItemID,
                             title: title,
-                            amountMinor: parseMinor(amountText),
-                            category: category.isEmpty ? nil : category
+                            amountMinor: parsedAmountMinor,
+                            category: normalizedCategory
                         )
                         animateAdd = true
                     }
@@ -92,7 +95,7 @@ struct DaySpendsView: View {
                 .buttonStyle(.borderedProminent)
                 .scaleEffect(animateAdd ? 0.98 : 1)
                 .animation(.easeOut(duration: 0.12), value: animateAdd)
-                .disabled(title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || parseMinor(amountText) <= 0)
+                .disabled(trimmedTitle.isEmpty || parsedAmountMinor <= 0)
 
                 if viewModel.editingItemID != nil {
                     Button(L10n.text("spends.cancel.edit", language)) {
@@ -167,17 +170,22 @@ struct DaySpendsView: View {
                 focusedField = .title
             }
         }
+        .onChange(of: title) {
+            scheduleAutosave()
+        }
+        .onChange(of: amountText) {
+            scheduleAutosave()
+        }
+        .onChange(of: category) {
+            scheduleAutosave()
+        }
+        .onDisappear {
+            autosaveTask?.cancel()
+            autosaveEditorIfNeeded()
+        }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button(L10n.text("common.close", language)) { dismiss() }
-            }
-            ToolbarItem(placement: .confirmationAction) {
-                Button(L10n.text("common.save", language)) {
-                    if viewModel.save() {
-                        dismiss()
-                    }
-                }
-                .disabled(!viewModel.canSave)
             }
         }
         .sheet(isPresented: $isCategoryEditorPresented) {
@@ -269,6 +277,8 @@ struct DaySpendsView: View {
     }
 
     private func loadEditor(from item: SpendItem) {
+        autosaveTask?.cancel()
+        autosavedItemID = item.id
         title = item.title
         amountText = majorString(fromMinor: item.amountMinor)
         category = item.category ?? ""
@@ -278,9 +288,12 @@ struct DaySpendsView: View {
     }
 
     private func resetEditor() {
+        autosaveTask?.cancel()
+        autosavedItemID = nil
         title = ""
         amountText = ""
         category = ""
+        viewModel.cancelEditing()
         DispatchQueue.main.async {
             focusedField = .title
         }
@@ -298,6 +311,59 @@ struct DaySpendsView: View {
         let normalized = value.replacingOccurrences(of: ",", with: ".")
         let decimal = Decimal(string: normalized) ?? 0
         return MinorUnits.fromMajor(decimal, currencyCode: viewModel.currencyCode)
+    }
+
+    private var trimmedTitle: String {
+        title.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var parsedAmountMinor: Int64 {
+        parseMinor(amountText)
+    }
+
+    private var normalizedCategory: String? {
+        let trimmed = category.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed
+    }
+
+    private var autosaveCategory: String? {
+        guard let normalizedCategory else { return nil }
+        return viewModel.matchingSuggestedCategory(for: normalizedCategory)
+    }
+
+    private var currentEditorItemID: UUID? {
+        viewModel.editingItemID ?? autosavedItemID
+    }
+
+    private func scheduleAutosave() {
+        autosaveTask?.cancel()
+        let itemID = currentEditorItemID
+        let title = trimmedTitle
+        let amountMinor = parsedAmountMinor
+        let category = autosaveCategory
+
+        guard !title.isEmpty, amountMinor > 0, let category else { return }
+
+        autosaveTask = Task { @MainActor in
+            try? await Task.sleep(for: .seconds(3))
+            guard !Task.isCancelled else { return }
+            autosavedItemID = viewModel.upsertItem(
+                id: itemID,
+                title: title,
+                amountMinor: amountMinor,
+                category: category
+            )
+        }
+    }
+
+    private func autosaveEditorIfNeeded() {
+        guard !trimmedTitle.isEmpty, parsedAmountMinor > 0, let category = autosaveCategory else { return }
+        autosavedItemID = viewModel.upsertItem(
+            id: currentEditorItemID,
+            title: trimmedTitle,
+            amountMinor: parsedAmountMinor,
+            category: category
+        )
     }
 
     @ViewBuilder

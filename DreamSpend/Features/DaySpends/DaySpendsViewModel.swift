@@ -9,7 +9,6 @@ final class DaySpendsViewModel: ObservableObject {
     @Published private(set) var draftItems: [SpendItem] = []
     @Published private(set) var editingItemID: UUID?
 
-    private var editingIndex: Int?
     private var cancellables: Set<AnyCancellable> = []
 
     init(store: GameStateStore, dayIndex: Int? = nil) {
@@ -32,6 +31,7 @@ final class DaySpendsViewModel: ObservableObject {
             .sink { [weak self] items in
                 guard let self, let dayIndex = self.currentDayIndex else { return }
                 self.store.updateDraftItems(items, for: dayIndex)
+                _ = self.store.saveSpends(items: items, for: dayIndex)
             }
             .store(in: &cancellables)
     }
@@ -77,29 +77,34 @@ final class DaySpendsViewModel: ObservableObject {
         store.categorySuggestions
     }
 
-    func upsertItem(title: String, amountMinor: Int64, category: String?) {
+    @discardableResult
+    func upsertItem(id: UUID? = nil, title: String, amountMinor: Int64, category: String? = nil) -> UUID? {
         let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return }
+        guard !trimmed.isEmpty else { return nil }
 
         let normalizedCategory = category?.trimmingCharacters(in: .whitespacesAndNewlines)
         if let normalizedCategory, !normalizedCategory.isEmpty {
             store.addCustomCategory(normalizedCategory)
         }
 
-        let item = SpendItem(title: trimmed, amountMinor: amountMinor, category: normalizedCategory)
+        let targetID = id ?? editingItemID ?? UUID()
+        let item = SpendItem(id: targetID, title: trimmed, amountMinor: amountMinor, category: normalizedCategory)
 
-        if let index = editingIndex, draftItems.indices.contains(index) {
+        if let index = draftItems.firstIndex(where: { $0.id == targetID }) {
             draftItems[index] = item
         } else {
             draftItems.append(item)
         }
 
-        clearEditing()
+        if id == nil {
+            clearEditing()
+        }
+
+        return targetID
     }
 
     func startEditing(item: SpendItem) {
-        guard let index = draftItems.firstIndex(where: { $0.id == item.id }) else { return }
-        editingIndex = index
+        guard draftItems.contains(where: { $0.id == item.id }) else { return }
         editingItemID = item.id
     }
 
@@ -110,14 +115,14 @@ final class DaySpendsViewModel: ObservableObject {
     func removeItem(id: UUID) {
         guard let index = draftItems.firstIndex(where: { $0.id == id }) else { return }
         draftItems.remove(at: index)
-        if editingIndex == index {
+        if editingItemID == id {
             clearEditing()
         }
     }
 
     func removeItem(at offsets: IndexSet) {
         for index in offsets {
-            if index == editingIndex {
+            if draftItems.indices.contains(index), draftItems[index].id == editingItemID {
                 clearEditing()
             }
         }
@@ -130,10 +135,11 @@ final class DaySpendsViewModel: ObservableObject {
 
     func renameCategory(_ category: String, to newName: String) {
         store.renameCustomCategory(category, to: newName)
-        if let editingIndex, draftItems.indices.contains(editingIndex),
-           draftItems[editingIndex].category?.caseInsensitiveCompare(category) == .orderedSame {
-            let item = draftItems[editingIndex]
-            draftItems[editingIndex] = SpendItem(id: item.id, title: item.title, amountMinor: item.amountMinor, category: newName)
+        if let editingItemID,
+           let index = draftItems.firstIndex(where: { $0.id == editingItemID }),
+           draftItems[index].category?.caseInsensitiveCompare(category) == .orderedSame {
+            let item = draftItems[index]
+            draftItems[index] = SpendItem(id: item.id, title: item.title, amountMinor: item.amountMinor, category: newName)
         }
     }
 
@@ -149,6 +155,12 @@ final class DaySpendsViewModel: ObservableObject {
         store.colorToken(for: category)
     }
 
+    func matchingSuggestedCategory(for value: String) -> String? {
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        return categorySuggestions.first { $0.caseInsensitiveCompare(trimmed) == .orderedSame }
+    }
+
     @discardableResult
     func save() -> Bool {
         guard let dayIndex = currentDayIndex else { return false }
@@ -156,7 +168,6 @@ final class DaySpendsViewModel: ObservableObject {
     }
 
     private func clearEditing() {
-        editingIndex = nil
         editingItemID = nil
     }
 }

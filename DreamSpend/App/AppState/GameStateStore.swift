@@ -145,14 +145,11 @@ final class GameStateStore: ObservableObject {
             return false
         }
 
-        let wasFilledBeforeSave = days[index].status == .filled
         days[index].items = items
-        days[index].status = .filled
+        days[index].status = items.isEmpty ? .open : .filled
         draftItemsByDayIndex.removeValue(forKey: days[index].dayIndex)
         mergeCategories(from: items)
-        if !wasFilledBeforeSave {
-            currentStreak = streakService.nextStreak(current: currentStreak, didFillToday: true)
-        }
+        currentStreak = recalculatedCurrentStreak()
 
         let maxForCurrency = maximumAmount(for: days[index].currencyCode)
         let reachedMaximum = days[index].dailyLimitMinor >= maxForCurrency
@@ -196,6 +193,7 @@ final class GameStateStore: ObservableObject {
         days[index].status = items.isEmpty ? .missed : .filled
         draftItemsByDayIndex.removeValue(forKey: days[index].dayIndex)
         mergeCategories(from: items)
+        currentStreak = recalculatedCurrentStreak()
         persist()
         return true
     }
@@ -402,6 +400,15 @@ final class GameStateStore: ObservableObject {
     private func cleanupDrafts() {
         let openIndices = Set(days.filter { $0.status == .open }.map { $0.dayIndex })
         draftItemsByDayIndex = draftItemsByDayIndex.filter { openIndices.contains($0.key) }
+    }
+
+    private func recalculatedCurrentStreak() -> Int {
+        var streak = 0
+        for day in days.sorted(by: { $0.dayIndex < $1.dayIndex }).reversed() {
+            guard day.status == .filled else { break }
+            streak += 1
+        }
+        return streak
     }
 
     private func projectedAmount(after dailyLimitMinor: Int64, currencyCode: String, previousStatus: DayStatus) -> Int64 {

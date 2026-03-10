@@ -30,8 +30,8 @@ class GameStore extends ChangeNotifier {
       ..clear()
       ..addAll(await _persistence.loadAchievements());
     final meta = await _persistence.loadProgressMeta();
-    streak = meta.streak;
-    missedInRow = meta.misses;
+    streak = meta.$1;
+    missedInRow = meta.$2;
 
     if (achievements.isEmpty) {
       achievements.addAll([

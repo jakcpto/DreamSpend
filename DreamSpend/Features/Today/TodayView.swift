@@ -1,9 +1,13 @@
 import SwiftUI
+#if os(iOS)
+import CoreMotion
+#endif
 
 struct TodayView: View {
     let viewModel: TodayViewModel
     @State private var selectedDayIndex: Int?
     @State private var editingDayIndex: Int?
+    @AppStorage("liquidEffectEnabled") private var liquidEffectEnabled: Bool = true
 
     private var language: SupportedLanguage {
         viewModel.store.settings.languageCode
@@ -50,8 +54,8 @@ struct TodayView: View {
                         .onAppear {
                             selectLatestDay()
                         }
-                        .onChange(of: viewModel.availableDays.last?.dayIndex) { newValue in
-                            guard let target = newValue else { return }
+                        .onChange(of: viewModel.availableDays.last?.dayIndex) {
+                            guard let target = viewModel.availableDays.last?.dayIndex else { return }
                             selectedDayIndex = target
                         }
                     }
@@ -92,7 +96,8 @@ struct TodayView: View {
             }
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
-            .onChange(of: viewModel.todayDayIndex) { _, newValue in
+            .onChange(of: viewModel.todayDayIndex) {
+                let newValue = viewModel.todayDayIndex
                 if let selectedDayIndex,
                    viewModel.day(for: selectedDayIndex) == nil {
                     self.selectedDayIndex = newValue
@@ -133,7 +138,7 @@ struct TodayView: View {
         let isSelected = selectedDay?.dayIndex == day.dayIndex
         let progress = viewModel.fillProgress(for: day)
         let tileBackground = tileBackgroundColor(for: day, isSelected: isSelected)
-        let progressColor = tileProgressColor(for: day, isSelected: isSelected)
+        let progressColor = tileProgressColor(for: day, progress: progress)
         let glassColor = tileGlassColor(for: day, isSelected: isSelected)
         let inset: CGFloat = 7
         let innerHeight: CGFloat = 92 - (inset * 2)
@@ -159,22 +164,21 @@ struct TodayView: View {
                     .padding(inset)
 
                 if progress > 0 {
-                    RoundedRectangle(cornerRadius: 14)
-                        .fill(progressColor)
-                        .padding(inset)
-                        .frame(height: innerHeight * progress + inset, alignment: .bottom)
+                    if liquidEffectEnabled {
+                        LiquidFill(progress: progress, color: progressColor, cornerRadius: 11)
+                            .padding(inset)
+                    } else {
+                        RoundedRectangle(cornerRadius: 14)
+                            .fill(progressColor)
+                            .padding(.horizontal, inset)
+                            .padding(.bottom, inset)
+                            .frame(height: (92 - inset) * progress, alignment: .bottom)
+                    }
                 }
 
                 RoundedRectangle(cornerRadius: 11)
                     .stroke(glassColor.opacity(isSelected ? 0.5 : 0.8), lineWidth: 1)
                     .padding(inset)
-
-                if progress > 0 {
-                    RoundedRectangle(cornerRadius: 2)
-                        .fill(Color.white.opacity(isSelected ? 0.32 : 0.45))
-                        .frame(width: 44, height: 3)
-                        .padding(.bottom, max(inset + innerHeight * progress - 6, inset + 3))
-                }
             }
             .clipShape(RoundedRectangle(cornerRadius: 14))
         )
@@ -214,25 +218,35 @@ struct TodayView: View {
         }
     }
 
-    private func tileProgressColor(for day: DayEntry, isSelected: Bool) -> Color {
-        if isSelected {
-            if viewModel.isOverLimit(day: day) {
-                return Color.green
-            }
-            if viewModel.isNearlyFull(day: day) {
-                return Color.yellow.opacity(0.9)
-            }
-            return Color.accentColor
-        }
+    private func tileProgressColor(for day: DayEntry, progress: CGFloat) -> Color {
+        // No fill color when there's no progress
+        guard progress > 0 else { return .clear }
 
-        guard day.status == .filled else { return Color.clear }
-        if viewModel.isOverLimit(day: day) {
-            return Color.green.opacity(0.85)
+        let p = Double(progress)
+
+        // Map progress to color ranges:
+        // 1%..45%  -> red
+        // 46%..90% -> orange
+        // 91%..101% -> green
+        // 102%..105% -> burgundy
+        switch p {
+        case 0.01...0.45:
+            return .red
+        case 0.46...0.90:
+            return .orange
+        case 0.91...1.01:
+            return .green
+        case 1.02...1.05:
+            return Color(red: 0.6, green: 0.0, blue: 0.2) // burgundy
+        default:
+            if p > 1.05 {
+                return Color(red: 0.6, green: 0.0, blue: 0.2) // cap to burgundy when over 105%
+            } else if p > 0 && p < 0.01 {
+                return .red // treat very tiny non-zero as red
+            } else {
+                return .clear
+            }
         }
-        if viewModel.isNearlyFull(day: day) {
-            return Color.yellow.opacity(0.78)
-        }
-        return Color.accentColor.opacity(0.82)
     }
 
     private func tileBorderColor(for day: DayEntry, isSelected: Bool) -> Color {
@@ -250,8 +264,179 @@ struct TodayView: View {
 
         return Color.white.opacity(isSelected ? 0.18 : 0.12)
     }
+
+    // MARK: - Liquid Effect
+    private struct LiquidFill: View {
+        let progress: CGFloat
+        let color: Color
+        let cornerRadius: CGFloat
+
+        @State private var phase: CGFloat = 0
+        @State private var bubbleSeed: UInt64 = UInt64.random(in: 0...UInt64.max)
+
+        var body: some View {
+            GeometryReader { geo in
+                let size = geo.size
+                TimelineView(.animation) { timeline in
+                    let time = timeline.date.timeIntervalSinceReferenceDate
+                    let amplitude = max(2, min(size.height * 0.05, 8))
+                    let speed = 1.2
+                    let phase = CGFloat(time * speed)
+
+                    ZStack(alignment: .bottom) {
+                        // Liquid body with wavy, tilted surface
+                        LiquidWaveShape(progress: progress, phase: phase, amplitude: amplitude)
+                            .fill(color)
+
+                        // Bubbles rising inside the liquid
+                        BubblesLayer(seed: bubbleSeed, progress: progress)
+                            .blendMode(.plusLighter)
+                            .opacity(0.5)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                }
+            }
+        }
+    }
+
+    private struct LiquidWaveShape: Shape {
+        let progress: CGFloat
+        let phase: CGFloat
+        let amplitude: CGFloat
+
+        #if os(iOS)
+        private let motion = MotionManager.shared
+        #endif
+
+        func path(in rect: CGRect) -> Path {
+            var path = Path()
+            let clamped = max(0, min(1, progress))
+            let fillTop = rect.maxY - rect.height * clamped
+
+            // Compute a simple tilt based on device roll (iOS only)
+            #if os(iOS)
+            let tilt = CGFloat(motion.currentRoll) // radians
+            #else
+            let tilt = CGFloat(0)
+            #endif
+
+            let waveAmp = amplitude
+            let twoPi = CGFloat.pi * 2
+
+            // Build top wavy edge with slight tilt
+            var points: [CGPoint] = []
+            let steps = max(24, Int(rect.width / 6))
+            for i in 0...steps {
+                let x = rect.minX + CGFloat(i) / CGFloat(steps) * rect.width
+                let baseY = fillTop + sin((x / rect.width) * twoPi + phase) * waveAmp
+                let tiltOffset = (x - rect.midX) * tan(tilt) * 0.06 // small tilt factor
+                let y = min(rect.maxY, max(rect.minY, baseY + tiltOffset))
+                points.append(CGPoint(x: x, y: y))
+            }
+
+            // Start from bottom-left
+            path.move(to: CGPoint(x: rect.minX, y: rect.maxY))
+            // Up to first point
+            if let first = points.first {
+                path.addLine(to: CGPoint(x: first.x, y: first.y))
+            }
+            // Wave along the top
+            for p in points.dropFirst() {
+                path.addLine(to: p)
+            }
+            // Down to bottom-right and close
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            path.closeSubpath()
+
+            return path
+        }
+    }
+
+    private struct BubblesLayer: View {
+        let seed: UInt64
+        let progress: CGFloat
+        private let bubbleCount = 10
+
+        var body: some View {
+            GeometryReader { geo in
+                let size = geo.size
+                var rng = SeededRandom(seed: seed)
+                let bubbles = (0..<bubbleCount).map { idx -> Bubble in
+                    let r = rng.random(in: 3...7) + CGFloat(idx % 3)
+                    let x = rng.random(in: r...(size.width - r))
+                    let base = rng.random(in: 0.0...1.0)
+                    return Bubble(x: x, radius: r, base: base)
+                }
+                TimelineView(.animation) { timeline in
+                    let t = timeline.date.timeIntervalSinceReferenceDate
+                    ZStack {
+                        ForEach(0..<bubbles.count, id: \.self) { i in
+                            let b = bubbles[i]
+                            let speed = (12.0 + Double(b.radius) * 1.2) / 10.0 // 10x slower
+                            let yProgress = CGFloat((t * speed + Double(b.base) * 4).truncatingRemainder(dividingBy: Double(1.2)))
+                            let liquidHeight = size.height * max(0, min(1, progress))
+                            let y = size.height - liquidHeight + (1 - yProgress) * liquidHeight
+                            Circle()
+                                .fill(Color.white.opacity(0.25))
+                                .frame(width: b.diameter, height: b.diameter)
+                                .position(x: b.x, y: y)
+                        }
+                    }
+                }
+            }
+        }
+
+        private struct Bubble {
+            let x: CGFloat
+            let radius: CGFloat
+            let base: CGFloat
+            var diameter: CGFloat { radius * 2 }
+        }
+    }
+
+    private struct SeededRandom {
+        var state: UInt64
+        init(seed: UInt64) { self.state = seed &* 0x9E3779B97F4A7C15 }
+        mutating func next() -> UInt64 {
+            state &+= 0x9E3779B97F4A7C15
+            var z = state
+            z = (z ^ (z >> 30)) &* 0xBF58476D1CE4E5B9
+            z = (z ^ (z >> 27)) &* 0x94D049BB133111EB
+            return z ^ (z >> 31)
+        }
+        mutating func random(in range: ClosedRange<CGFloat>) -> CGFloat {
+            let v = next()
+            let unit = CGFloat(v) / CGFloat(UInt64.max)
+            return range.lowerBound + (range.upperBound - range.lowerBound) * unit
+        }
+        mutating func random(in range: ClosedRange<Double>) -> Double {
+            let v = next()
+            let unit = Double(v) / Double(UInt64.max)
+            return range.lowerBound + (range.upperBound - range.lowerBound) * unit
+        }
+    }
+
+    #if os(iOS)
+    private final class MotionManager {
+        static let shared = MotionManager()
+        private let manager = CMMotionManager()
+        private(set) var currentRoll: Double = 0 // radians
+        private init() {
+            if manager.isDeviceMotionAvailable {
+                manager.deviceMotionUpdateInterval = 1.0 / 30.0
+                manager.startDeviceMotionUpdates(to: .main) { [weak self] motion, _ in
+                    guard let self, let motion else { return }
+                    // Use roll relative to gravity; clamp to reasonable range
+                    let roll = motion.attitude.roll
+                    self.currentRoll = max(-.pi/4, min(.pi/4, roll))
+                }
+            }
+        }
+    }
+    #endif
 }
 
 private struct EditableDay: Identifiable {
     let id: Int
 }
+

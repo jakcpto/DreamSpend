@@ -63,7 +63,12 @@ final class TodayViewModel {
 
     func amountLabel(for day: DayEntry) -> String {
         let locale = store.settings.languageCode.localeIdentifier
-        return CurrencyFormatter.format(minor: day.dailyLimitMinor, currencyCode: day.currencyCode, localeIdentifier: locale)
+        return CurrencyFormatter.format(
+            minor: day.dailyLimitMinor,
+            currencyCode: day.currencyCode,
+            localeIdentifier: locale,
+            style: .compactNoFraction
+        )
     }
 
     func spends(for day: DayEntry?) -> [SpendItem] {
