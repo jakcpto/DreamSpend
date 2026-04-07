@@ -148,7 +148,6 @@ struct TodayView: View {
         let progressColor = tileProgressColor(for: day, progress: progress)
         let glassColor = tileGlassColor(for: day, isSelected: isSelected)
         let inset: CGFloat = 7
-        let innerHeight: CGFloat = 92 - (inset * 2)
 
         VStack(spacing: 8) {
             Text(day.date.formatted(.dateTime.day()))

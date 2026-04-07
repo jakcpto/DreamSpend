@@ -136,6 +136,15 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    Button {
+                        viewModel.replayOnboarding()
+                    } label: {
+                        Text(L10n.text("settings.replayOnboarding", language))
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                }
+
+                Section {
                     Button(role: .destructive) {
                         showResetConfirmation = true
                     } label: {

@@ -14,7 +14,7 @@ struct RootView: View {
 
     var body: some View {
         let language = gameStore.settings.languageCode
-        let shouldShowOnboarding = !hasCompletedOnboarding && !gameStore.hasRecordedProgress
+        let shouldShowOnboarding = !hasCompletedOnboarding
 
         TabView(selection: $selectedTab) {
             TodayView(

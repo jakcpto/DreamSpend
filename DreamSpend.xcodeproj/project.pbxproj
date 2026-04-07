@@ -218,7 +218,7 @@
 				87AAD9DC8F8BBAB047C11E05 /* Settings */,
 				33043BA666D136B69961A090 /* Shared */,
 				402F60C7E873A7DF8BA2B7CF /* Today */,
-				7A692F3A2F850FD700093881 /* Onboarding 2 */,
+				7A692F3A2F850FD700093881 /* Onboarding */,
 			);
 			name = Features;
 			path = DreamSpend/Features;
@@ -242,12 +242,12 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		7A692F3A2F850FD700093881 /* Onboarding 2 */ = {
+		7A692F3A2F850FD700093881 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				7A692F3B2F850FE800093881 /* OnboardingView.swift */,
 			);
-			path = "Onboarding 2";
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		81C642EAF7CEB0F7830C3397 /* Localization */ = {

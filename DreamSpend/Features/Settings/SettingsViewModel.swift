@@ -109,6 +109,10 @@ final class SettingsViewModel: ObservableObject {
         }
     }
 
+    func replayOnboarding() {
+        UserDefaults.standard.set(false, forKey: "hasCompletedOnboarding")
+    }
+
     func resetProgress() {
         gameStore.restartGame()
     }
