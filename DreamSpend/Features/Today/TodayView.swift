@@ -9,6 +9,7 @@ struct TodayView: View {
     @State private var selectedDayIndex: Int?
     @State private var editingDayIndex: Int?
     @AppStorage("liquidEffectEnabled") private var liquidEffectEnabled: Bool = true
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     private var language: SupportedLanguage {
         viewModel.store.settings.languageCode
@@ -18,81 +19,39 @@ struct TodayView: View {
         viewModel.day(for: selectedDayIndex ?? viewModel.todayDayIndex)
     }
 
+    private var isRegularWidth: Bool {
+        horizontalSizeClass == .regular
+    }
+
+    private var selectedSpentLabel: String {
+        guard let selectedDay else { return amountLabel(minor: 0, currencyCode: viewModel.store.settings.currencyCode(for: language)) }
+        return amountLabel(minor: selectedDay.totalSpentMinor, currencyCode: selectedDay.currencyCode)
+    }
+
+    private var selectedRemainingLabel: String {
+        guard let selectedDay else { return amountLabel(minor: 0, currencyCode: viewModel.store.settings.currencyCode(for: language)) }
+        return amountLabel(minor: selectedDay.remainingMinor, currencyCode: selectedDay.currencyCode)
+    }
+
+    private var selectedStatusText: String {
+        guard let selectedDay else { return L10n.text("history.status.open", language) }
+        switch selectedDay.status {
+        case .open:
+            return L10n.text("history.status.open", language)
+        case .filled:
+            return L10n.text("history.status.filled", language)
+        case .missed:
+            return L10n.text("history.status.missed", language)
+        }
+    }
+
     var body: some View {
         NavigationStack {
-            GeometryReader { proxy in
-                let topHeight = proxy.size.height * 0.34
-                let bottomHeight = proxy.size.height * 0.66
-
-                VStack(spacing: 0) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text(viewModel.monthAndYear(for: selectedDay))
-                            .font(.title2.bold())
-                            .frame(maxWidth: .infinity, alignment: .leading)
-
-                        ScrollView([.horizontal, .vertical], showsIndicators: true) {
-                            VStack(alignment: .leading, spacing: 12) {
-                                ForEach(viewModel.monthSections) { section in
-                                    HStack(alignment: .top, spacing: 10) {
-                                        Text(viewModel.monthLabel(for: section.monthStart))
-                                            .font(.caption.bold())
-                                            .foregroundStyle(.secondary)
-                                            .frame(width: 34, alignment: .leading)
-                                            .padding(.top, 8)
-
-                                        HStack(alignment: .top, spacing: 12) {
-                                            ForEach(section.days) { day in
-                                                dateTile(for: day)
-                                                    .id(day.dayIndex)
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            .padding(.vertical, 2)
-                            .padding(.bottom, 4)
-                        }
-                        .onAppear {
-                            selectLatestDay()
-                        }
-                        .onChange(of: viewModel.availableDays.last?.dayIndex) {
-                            guard let target = viewModel.availableDays.last?.dayIndex else { return }
-                            selectedDayIndex = target
-                        }
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.top, 8)
-                    .frame(height: topHeight, alignment: .top)
-
-                    Group {
-                        if viewModel.isFilled(day: selectedDay) {
-                            List {
-                                Section(L10n.text("today.spends", language)) {
-                                    ForEach(viewModel.spends(for: selectedDay)) { item in
-                                        VStack(alignment: .leading, spacing: 4) {
-                                            Text(item.title)
-                                                .font(.headline)
-                                            if let category = item.category {
-                                                Text(category)
-                                                    .font(.caption)
-                                                    .foregroundStyle(.secondary)
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            VStack {
-                                Spacer()
-                                PrimaryButton(title: L10n.text("today.fill", language)) {
-                                    editingDayIndex = selectedDay?.dayIndex ?? viewModel.todayDayIndex
-                                }
-                                .padding(.horizontal, 16)
-                                Spacer()
-                            }
-                        }
-                    }
-                    .frame(height: bottomHeight)
+            Group {
+                if isRegularWidth {
+                    iPadLayout
+                } else {
+                    iPhoneLayout
                 }
             }
             .navigationTitle("")
@@ -138,6 +97,166 @@ struct TodayView: View {
             }
             #endif
         }
+    }
+
+    // MARK: - Calendar Grid (shared)
+
+    private var calendarGrid: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(viewModel.monthAndYear(for: selectedDay))
+                .font(.title2.bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            ScrollView([.horizontal, .vertical], showsIndicators: true) {
+                VStack(alignment: .leading, spacing: 12) {
+                    ForEach(viewModel.monthSections) { section in
+                        HStack(alignment: .top, spacing: 10) {
+                            Text(viewModel.monthLabel(for: section.monthStart))
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+                                .frame(width: 34, alignment: .leading)
+                                .padding(.top, 8)
+
+                            HStack(alignment: .top, spacing: 12) {
+                                ForEach(section.days) { day in
+                                    dateTile(for: day)
+                                        .id(day.dayIndex)
+                                }
+                            }
+                        }
+                    }
+                }
+                .padding(.vertical, 2)
+                .padding(.bottom, 4)
+            }
+            .onAppear {
+                selectLatestDay()
+            }
+            .onChange(of: viewModel.availableDays.last?.dayIndex) {
+                guard let target = viewModel.availableDays.last?.dayIndex else { return }
+                selectedDayIndex = target
+            }
+        }
+    }
+
+    private var dayDetailPanel: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(selectedDayTitle)
+                        .font(.title2.bold())
+                    Text(selectedDay?.date.formatted(date: .long, time: .omitted) ?? "")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                LazyVGrid(columns: detailSummaryColumns, alignment: .leading, spacing: 12) {
+                    detailStatCard(
+                        title: L10n.text("today.summary.spent", language),
+                        value: selectedSpentLabel,
+                        tint: .accentColor
+                    )
+                    detailStatCard(
+                        title: L10n.text("today.summary.remaining", language),
+                        value: selectedRemainingLabel,
+                        tint: (selectedDay?.remainingMinor ?? 0) < 0 ? .red : .green
+                    )
+                    detailStatCard(
+                        title: L10n.text("today.summary.status", language),
+                        value: selectedStatusText,
+                        tint: statusColor(for: selectedDay)
+                    )
+                }
+
+                VStack(alignment: .leading, spacing: 14) {
+                    HStack {
+                        Text(L10n.text("today.spends", language))
+                            .font(.headline)
+                        Spacer()
+                        if selectedDay != nil {
+                            Button(L10n.text("today.fill", language)) {
+                                editingDayIndex = selectedDay?.dayIndex ?? viewModel.todayDayIndex
+                            }
+                            .buttonStyle(.borderedProminent)
+                        }
+                    }
+
+                    if viewModel.spends(for: selectedDay).isEmpty {
+                        EmptyStateView(
+                            title: L10n.text("today.empty.title", language),
+                            subtitle: L10n.text("today.empty.subtitle", language)
+                        )
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 20)
+                    } else {
+                        ForEach(viewModel.spends(for: selectedDay)) { item in
+                            HStack(alignment: .top, spacing: 12) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(item.title)
+                                        .font(.headline)
+                                    if let category = item.category {
+                                        Text(category)
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
+
+                                Spacer()
+
+                                Text(amountLabel(minor: item.amountMinor, currencyCode: selectedDay?.currencyCode ?? viewModel.store.settings.currencyCode(for: language)))
+                                    .font(.subheadline.weight(.semibold))
+                            }
+                            .padding(14)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(
+                                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                    .fill(Color(.secondarySystemBackground))
+                            )
+                        }
+                    }
+                }
+                .padding(20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(panelBackground)
+            }
+        }
+        .scrollBounceBehavior(.basedOnSize)
+    }
+
+    // MARK: - iPhone Layout
+
+    private var iPhoneLayout: some View {
+        GeometryReader { proxy in
+            let calendarHeight = min(max(proxy.size.height * 0.34, 240), 280)
+
+            VStack(spacing: 16) {
+                calendarSectionCard
+                    .frame(height: calendarHeight)
+
+                dayDetailPanel
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        }
+        .padding(16)
+        .background(screenBackground.ignoresSafeArea())
+    }
+
+    private var iPadLayout: some View {
+        GeometryReader { proxy in
+            let leftWidth = min(max(proxy.size.width * 0.44, 380), 520)
+
+            HStack(alignment: .top, spacing: 20) {
+                calendarSectionCard
+                    .frame(width: leftWidth)
+
+                dayDetailPanel
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            }
+            .padding(24)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        }
+        .background(screenBackground.ignoresSafeArea())
     }
 
     @ViewBuilder
@@ -276,6 +395,83 @@ struct TodayView: View {
         }
 
         return Color.white.opacity(isSelected ? 0.18 : 0.12)
+    }
+
+    private var selectedDayTitle: String {
+        guard let selectedDay else { return L10n.text("tab.today", language) }
+        return L10n.day(selectedDay.dayIndex, language)
+    }
+
+    private var detailSummaryColumns: [GridItem] {
+        [
+            GridItem(.adaptive(minimum: isRegularWidth ? 160 : 140), spacing: 12, alignment: .top)
+        ]
+    }
+
+    private var calendarSectionCard: some View {
+        calendarGrid
+            .padding(20)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .background(panelBackground)
+    }
+
+    private var panelBackground: some View {
+        RoundedRectangle(cornerRadius: 28, style: .continuous)
+            .fill(.regularMaterial)
+            .overlay(
+                RoundedRectangle(cornerRadius: 28, style: .continuous)
+                    .stroke(Color.white.opacity(0.3), lineWidth: 1)
+            )
+    }
+
+    private var screenBackground: some View {
+        LinearGradient(
+            colors: [
+                Color(red: 0.96, green: 0.97, blue: 0.99),
+                Color(red: 0.92, green: 0.95, blue: 0.98)
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
+
+    private func detailStatCard(title: String, value: String, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            Text(value)
+                .font(.headline)
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 88, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(tint.opacity(0.12))
+        )
+    }
+
+    private func amountLabel(minor: Int64, currencyCode: String) -> String {
+        CurrencyFormatter.format(
+            minor: minor,
+            currencyCode: currencyCode,
+            localeIdentifier: language.localeIdentifier
+        )
+    }
+
+    private func statusColor(for day: DayEntry?) -> Color {
+        guard let day else { return .secondary }
+        switch day.status {
+        case .open:
+            return .blue
+        case .filled:
+            return .green
+        case .missed:
+            return .orange
+        }
     }
 
     // MARK: - Liquid Effect

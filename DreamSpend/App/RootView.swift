@@ -17,21 +17,22 @@ struct RootView: View {
         let shouldShowOnboarding = !hasCompletedOnboarding
 
         TabView(selection: $selectedTab) {
-            TodayView(
-                viewModel: container.todayViewModel,
-                requestedEditingDayIndex: $requestedEditingDayIndex
-            )
-                .tabItem { Label(L10n.text("tab.today", language), systemImage: "sun.max") }
-                .tag(AppTab.today)
+            Tab(L10n.text("tab.today", language), systemImage: "sun.max", value: AppTab.today) {
+                TodayView(
+                    viewModel: container.todayViewModel,
+                    requestedEditingDayIndex: $requestedEditingDayIndex
+                )
+            }
 
-            AchievementsView(viewModel: container.achievementsViewModel)
-                .tabItem { Label(L10n.text("tab.achievements", language), systemImage: "trophy") }
-                .tag(AppTab.achievements)
+            Tab(L10n.text("tab.achievements", language), systemImage: "trophy", value: AppTab.achievements) {
+                AchievementsView(viewModel: container.achievementsViewModel)
+            }
 
-            SettingsView(viewModel: container.settingsViewModel)
-                .tabItem { Label(L10n.text("tab.settings", language), systemImage: "gearshape") }
-                .tag(AppTab.settings)
+            Tab(L10n.text("tab.settings", language), systemImage: "gearshape", value: AppTab.settings) {
+                SettingsView(viewModel: container.settingsViewModel)
+            }
         }
+        .tabViewStyle(.sidebarAdaptable)
         .environment(\.locale, Locale(identifier: language.localeIdentifier))
         .fullScreenCover(isPresented: Binding(
             get: { shouldShowOnboarding },

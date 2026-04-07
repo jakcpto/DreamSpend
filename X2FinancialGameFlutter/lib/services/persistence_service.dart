@@ -53,23 +53,7 @@ class PersistenceService {
     await prefs.setInt(_missesKey, misses);
   }
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
   Future<(int, int)> loadProgressMeta() async {
-=======
-  Future<(int streak, int misses)> loadProgressMeta() async {
->>>>>>> theirs
-=======
-  Future<(int streak, int misses)> loadProgressMeta() async {
->>>>>>> theirs
-=======
-  Future<(int streak, int misses)> loadProgressMeta() async {
->>>>>>> theirs
-=======
-  Future<(int streak, int misses)> loadProgressMeta() async {
->>>>>>> theirs
     final prefs = await SharedPreferences.getInstance();
     return (prefs.getInt(_streakKey) ?? 0, prefs.getInt(_missesKey) ?? 0);
   }

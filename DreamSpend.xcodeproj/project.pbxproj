@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,9 +30,9 @@
 		6AD40B840D5D1D49BD1A7048 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349672A6A22BA43327CEAAA2 /* TodayViewModel.swift */; };
 		75A9A771B833D2E129AC192D /* FXConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988DA0468C081ABADDDA5383 /* FXConversionTests.swift */; };
 		779B571A5FA801EDF8BBDF38 /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77087BF9D170FAD4697B01E4 /* AchievementsViewModel.swift */; };
-		7A692F3C2F850FE800093881 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A692F3B2F850FE800093881 /* OnboardingView.swift */; };
 		83704B0C4E723C872C00F59A /* CelebrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAC23719607479A5FC6A675 /* CelebrationViewModel.swift */; };
 		858C91BFE5197386E51F4AE4 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D0239BBCE03607AA0A183 /* CelebrationView.swift */; };
+		88F30E42C94AB723B14EA8AD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D291691521D02D7BF88F68B2 /* OnboardingView.swift */; };
 		8D63565327A4C84F60FA1A11 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F29CEC1033D05625E9285E5 /* Achievement.swift */; };
 		98721DBBE0A5A57DCD27DE70 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A409B063CAE542C8C5F62 /* CalendarService.swift */; };
 		9AD9B570AD774F4EF2382391 /* DayProgressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D20205B90EB12B01282ED9D /* DayProgressionTests.swift */; };
@@ -91,7 +91,6 @@
 		7463CC71FC5922CC6C539660 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		750BB9C2564DA8518A73D1D0 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		77087BF9D170FAD4697B01E4 /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
-		7A692F3B2F850FE800093881 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		988DA0468C081ABADDDA5383 /* FXConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXConversionTests.swift; sourceTree = "<group>"; };
 		A2991F4DB7ACE6171DC7848F /* DaySpendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySpendsViewModel.swift; sourceTree = "<group>"; };
 		A40A4DB658E2B3CB45B0B530 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -107,15 +106,16 @@
 		BF1F7A152B3A9CDF07C0AA2B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		C4990144EF1E3D7986401014 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C9729D928B6E09C8468CD16D /* RestartGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartGameTests.swift; sourceTree = "<group>"; };
+		D291691521D02D7BF88F68B2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D9A1034723A99864FEF11561 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		DBAC23719607479A5FC6A675 /* CelebrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationViewModel.swift; sourceTree = "<group>"; };
 		DE80B6F94673B0746CB8B536 /* AchievementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
 		EB39ECF797B7352AD58AA63E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F100AA421627D3B3DD50AC6B /* DreamSpendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamSpendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F100AA421627D3B3DD50AC6B /* DreamSpendTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = DreamSpendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56E383FE5A57B2F99A71D60 /* MinorUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorUnits.swift; sourceTree = "<group>"; };
 		FC1780B6D4B4C01CD117E30A /* LiveFXService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFXService.swift; sourceTree = "<group>"; };
 		FCB791C3D4D3FEADA90CBCAE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		FD778623EF29448DA5105EA3 /* DreamSpend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamSpend.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD778623EF29448DA5105EA3 /* DreamSpend.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DreamSpend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -215,10 +215,10 @@
 				FAAFE2EA844E704855875D8C /* Celebration */,
 				66144D78AB3A97A519C17B5F /* DaySpends */,
 				78226C29949B532E9834083F /* History */,
+				D18CDCEAADDF9FDF399472BC /* Onboarding */,
 				87AAD9DC8F8BBAB047C11E05 /* Settings */,
 				33043BA666D136B69961A090 /* Shared */,
 				402F60C7E873A7DF8BA2B7CF /* Today */,
-				7A692F3A2F850FD700093881 /* Onboarding */,
 			);
 			name = Features;
 			path = DreamSpend/Features;
@@ -240,14 +240,6 @@
 				2E235F658B32A6BA22BAC0DC /* HistoryViewModel.swift */,
 			);
 			path = History;
-			sourceTree = "<group>";
-		};
-		7A692F3A2F850FD700093881 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				7A692F3B2F850FE800093881 /* OnboardingView.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		81C642EAF7CEB0F7830C3397 /* Localization */ = {
@@ -328,6 +320,14 @@
 				FC1780B6D4B4C01CD117E30A /* LiveFXService.swift */,
 			);
 			path = FX;
+			sourceTree = "<group>";
+		};
+		D18CDCEAADDF9FDF399472BC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D291691521D02D7BF88F68B2 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		D5594F5ED94895F464E6B180 /* AppState */ = {
@@ -513,15 +513,18 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					08ACDE9E808314EF6D0F1787 = {
+						DevelopmentTeam = BDLXDVBT8B;
 						ProvisioningStyle = Automatic;
+					};
+					9361CE4F3E807E408680E55E = {
+						DevelopmentTeam = BDLXDVBT8B;
 					};
 				};
 			};
 			buildConfigurationList = 539836A6F713931C8D3272F4 /* Build configuration list for PBXProject "DreamSpend" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -532,6 +535,8 @@
 			);
 			mainGroup = FFD57A6588BB7BD1965513BB;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B9BE59FBFCAF9CD80F728116 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -583,10 +588,10 @@
 				25D8E16FD6874CDBAC43A9B8 /* HistoryViewModel.swift in Sources */,
 				9C7087F5BF3D2437CFFF2426 /* L10n.swift in Sources */,
 				283C12C513DE50AE727EF8F8 /* LanguageService.swift in Sources */,
-				7A692F3C2F850FE800093881 /* OnboardingView.swift in Sources */,
 				579AA1E70EFAA82C75175342 /* LiveFXService.swift in Sources */,
 				BC397924DA6F109C669DC590 /* MinorUnits.swift in Sources */,
 				59BF3009EDC66F2D9A5A9085 /* NotificationService.swift in Sources */,
+				88F30E42C94AB723B14EA8AD /* OnboardingView.swift in Sources */,
 				D998A8E8A1246C724BFDA3BB /* PersistenceController.swift in Sources */,
 				62CDA2D75FA34AF05174B733 /* PrimaryButton.swift in Sources */,
 				3CB2A3DB5087EEBBDF7507BD /* ProgressHeader.swift in Sources */,
@@ -628,8 +633,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -660,11 +663,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -686,7 +688,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
@@ -701,19 +702,19 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDLXDVBT8B;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = DreamSpend;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teccod.DreamSpend;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -723,7 +724,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = BDLXDVBT8B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,7 +743,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = BDLXDVBT8B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -763,19 +764,19 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDLXDVBT8B;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = DreamSpend;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teccod.DreamSpend;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -783,8 +784,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -815,11 +814,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -834,7 +832,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.9;
