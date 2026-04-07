@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @ObservedObject var viewModel: SettingsViewModel
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     private enum Field: Hashable {
         case startAmount
@@ -20,6 +21,10 @@ struct SettingsView: View {
 
     private var language: SupportedLanguage {
         viewModel.language
+    }
+
+    private var preferredContentWidth: CGFloat {
+        horizontalSizeClass == .regular ? 720 : .infinity
     }
 
     var body: some View {
@@ -188,6 +193,8 @@ struct SettingsView: View {
                 syncLimitFields()
                 fxRateText = viewModel.currentManualRateString()
             }
+            .frame(maxWidth: preferredContentWidth)
+            .frame(maxWidth: .infinity)
         }
     }
 

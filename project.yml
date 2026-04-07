@@ -6,7 +6,7 @@ options:
 settings:
   base:
     SWIFT_VERSION: 5.9
-    CURRENT_PROJECT_VERSION: 1
+    CURRENT_PROJECT_VERSION: 11
     MARKETING_VERSION: 1.0
 configs:
   Debug: debug
@@ -15,6 +15,35 @@ targets:
   DreamSpend:
     type: application
     platform: iOS
+    preBuildScripts:
+      - name: Auto Increment Build Number
+        script: |
+          if [ "$ACTION" = "indexbuild" ] || [ "$ENABLE_PREVIEWS" = "YES" ]; then
+            exit 0
+          fi
+
+          cd "$SRCROOT" || exit 1
+          xcrun agvtool next-version -all
+          NEW_BUILD_NUMBER="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "$SRCROOT/Info.plist")"
+          python3 - "$SRCROOT/project.yml" "$NEW_BUILD_NUMBER" <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          path = Path(sys.argv[1])
+          new_build_number = sys.argv[2]
+          text = path.read_text()
+          updated = re.sub(
+              r"(^\s*CURRENT_PROJECT_VERSION:\s*)\d+",
+              rf"\g<1>{new_build_number}",
+              text,
+              count=1,
+              flags=re.MULTILINE,
+          )
+          if updated == text:
+              raise SystemExit("CURRENT_PROJECT_VERSION not found in project.yml")
+          path.write_text(updated)
+          PY
     sources:
       - path: DreamSpend/App
       - path: DreamSpend/Core
@@ -26,14 +55,14 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.teccod.DreamSpend
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: AppIconCoin AppIconGame
-        INFOPLIST_KEY_CFBundleDisplayName: DreamSpend
-        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
-        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
-        INFOPLIST_KEY_UILaunchScreen_Generation: YES
-        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
-        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: Info.plist
         CODE_SIGN_STYLE: Automatic
-        TARGETED_DEVICE_FAMILY: "1"
+        DEVELOPMENT_TEAM: BDLXDVBT8B
+        IPHONEOS_DEPLOYMENT_TARGET: 18.6
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        SUPPORTS_MACCATALYST: NO
+        VERSIONING_SYSTEM: apple-generic
   DreamSpendTests:
     type: bundle.unit-test
     platform: iOS
@@ -44,9 +73,12 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
-        PRODUCT_BUNDLE_IDENTIFIER: com.evgeniy.DreamSpendTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.teccod.DreamSpendTests
         BUNDLE_LOADER: "$(TEST_HOST)"
         TEST_HOST: "$(BUILT_PRODUCTS_DIR)/DreamSpend.app/DreamSpend"
+        DEVELOPMENT_TEAM: BDLXDVBT8B
+        IPHONEOS_DEPLOYMENT_TARGET: 18.6
+        TARGETED_DEVICE_FAMILY: "1,2"
 schemes:
   DreamSpend:
     build:

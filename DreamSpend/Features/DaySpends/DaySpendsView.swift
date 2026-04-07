@@ -13,6 +13,7 @@ struct DaySpendsView: View {
     @State private var isCategoryEditorPresented: Bool = false
     @State private var autosavedItemID: UUID?
     @State private var autosaveTask: Task<Void, Never>?
+    @State private var amountFieldValidationTint: Double = 0
 
     @FocusState private var focusedField: Field?
 
@@ -56,13 +57,30 @@ struct DaySpendsView: View {
             Section(viewModel.editingItemID == nil ? L10n.text("spends.section.add", language) : L10n.text("spends.section.edit", language)) {
                 TextField(L10n.text("spends.name", language), text: $title)
                     .focused($focusedField, equals: .title)
+                    .submitLabel(.next)
+                    .onSubmit {
+                        focusedField = .amount
+                    }
 
                 decimalTextField(L10n.text("spends.amount", language), text: $amountText)
                     .focused($focusedField, equals: .amount)
+                    .submitLabel(.done)
+                    .onSubmit {
+                        focusedField = nil
+                    }
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(Color.red.opacity(amountFieldValidationTint))
+                            .padding(.vertical, 2)
+                    )
 
                 HStack {
                     TextField(L10n.text("spends.category", language), text: $category)
                         .focused($focusedField, equals: .category)
+                        .submitLabel(.done)
+                        .onSubmit {
+                            focusedField = nil
+                        }
                     if !category.isEmpty {
                         Button {
                             category = ""
@@ -83,16 +101,7 @@ struct DaySpendsView: View {
                 }
 
                 Button {
-                    withAnimation(.spring(response: 0.28, dampingFraction: 0.8)) {
-                        _ = viewModel.upsertItem(
-                            id: currentEditorItemID,
-                            title: title,
-                            amountMinor: parsedAmountMinor,
-                            category: normalizedCategory
-                        )
-                        animateAdd = true
-                    }
-                    resetEditor()
+                    commitCurrentSpend(categoryOverride: normalizedCategory)
                 } label: {
                     HStack {
                         Image(systemName: viewModel.editingItemID == nil ? "plus.circle.fill" : "pencil.circle.fill")
@@ -178,11 +187,6 @@ struct DaySpendsView: View {
             }
         }
         .navigationTitle(L10n.text("spends.title", language))
-        .onAppear {
-            DispatchQueue.main.async {
-                focusedField = .title
-            }
-        }
         .onChange(of: title) {
             scheduleAutosave()
         }
@@ -201,6 +205,7 @@ struct DaySpendsView: View {
                 Button(L10n.text("common.close", language)) { dismiss() }
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .sheet(isPresented: $isCategoryEditorPresented) {
             NavigationStack {
                 Form {
@@ -266,11 +271,13 @@ struct DaySpendsView: View {
                     guard !viewModel.isDefaultCategory(suggestion) else { return }
                     selectedCategoryForEditing = suggestion
                     categoryDraftName = suggestion
+                    focusedField = nil
                     isCategoryEditorPresented = true
                 }
                 .onTapGesture {
                     category = suggestion
-                    focusedField = .title
+                    focusedField = nil
+                    commitCurrentSpend(categoryOverride: suggestion)
                 }
 
             if !viewModel.isDefaultCategory(suggestion) {
@@ -296,7 +303,7 @@ struct DaySpendsView: View {
         amountText = majorString(fromMinor: item.amountMinor)
         category = item.category ?? ""
         DispatchQueue.main.async {
-            focusedField = .title
+            focusedField = nil
         }
     }
 
@@ -308,7 +315,7 @@ struct DaySpendsView: View {
         category = ""
         viewModel.cancelEditing()
         DispatchQueue.main.async {
-            focusedField = .title
+            focusedField = nil
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
             animateAdd = false
@@ -346,6 +353,49 @@ struct DaySpendsView: View {
 
     private var currentEditorItemID: UUID? {
         viewModel.editingItemID ?? autosavedItemID
+    }
+
+    private func commitCurrentSpend(categoryOverride: String?) {
+        let selectedCategory = categoryOverride?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let category = (selectedCategory?.isEmpty == false ? selectedCategory : normalizedCategory)
+
+        guard !trimmedTitle.isEmpty, parsedAmountMinor > 0, let category else { return }
+        guard canCommit(amountMinor: parsedAmountMinor) else {
+            triggerAmountValidationFeedback()
+            return
+        }
+
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.8)) {
+            _ = viewModel.upsertItem(
+                id: currentEditorItemID,
+                title: title,
+                amountMinor: parsedAmountMinor,
+                category: category
+            )
+            animateAdd = true
+        }
+        resetEditor()
+    }
+
+    private func canCommit(amountMinor: Int64) -> Bool {
+        let itemID = currentEditorItemID
+        let existingAmount = itemID.flatMap { id in
+            viewModel.draftItems.first(where: { $0.id == id })?.amountMinor
+        } ?? 0
+        let proposedTotal = viewModel.totalMinor - existingAmount + amountMinor
+        return proposedTotal <= viewModel.allowedTotalMinor
+    }
+
+    private func triggerAmountValidationFeedback() {
+        autosaveTask?.cancel()
+        amountFieldValidationTint = 0.32
+
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(2))
+            withAnimation(.easeOut(duration: 0.5)) {
+                amountFieldValidationTint = 0
+            }
+        }
     }
 
     private func scheduleAutosave() {
