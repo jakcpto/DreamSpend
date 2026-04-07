@@ -77,6 +77,10 @@ final class DaySpendsViewModel: ObservableObject {
         store.categorySuggestions
     }
 
+    var hasDemoItems: Bool {
+        draftItems.contains(where: \.isDemo)
+    }
+
     @discardableResult
     func upsertItem(id: UUID? = nil, title: String, amountMinor: Int64, category: String? = nil) -> UUID? {
         let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -88,7 +92,7 @@ final class DaySpendsViewModel: ObservableObject {
         }
 
         let targetID = id ?? editingItemID ?? UUID()
-        let item = SpendItem(id: targetID, title: trimmed, amountMinor: amountMinor, category: normalizedCategory)
+        let item = SpendItem(id: targetID, title: trimmed, amountMinor: amountMinor, category: normalizedCategory, isDemo: false)
 
         if let index = draftItems.firstIndex(where: { $0.id == targetID }) {
             draftItems[index] = item

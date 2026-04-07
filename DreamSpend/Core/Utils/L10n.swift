@@ -103,7 +103,19 @@ enum L10n {
             "settings.resetAll": "Сбросить",
             "settings.resetAll.hint": "Удалит весь прогресс и начнёт игру заново с текущей даты.",
             "settings.resetAll.confirm.title": "Сбросить весь прогресс?",
-            "settings.resetAll.confirm.message": "Все данные игры будут удалены без возможности восстановления."
+            "settings.resetAll.confirm.message": "Все данные игры будут удалены без возможности восстановления.",
+            "onboarding.skip": "Пока пропустить",
+            "onboarding.next": "Далее",
+            "onboarding.startDemo": "Открыть демо-день",
+            "onboarding.title.1": "Как устроена игра",
+            "onboarding.body.1": "Каждый день у вас новый лимит. Заполненный день удваивает следующий бюджет, пропущенный оставляет рост без прогресса.",
+            "onboarding.title.2": "Как вносить траты",
+            "onboarding.body.2": "На вкладке Сегодня нажмите \"Внести траты\", добавьте название, сумму и при желании категорию.",
+            "onboarding.title.3": "Как редактировать",
+            "onboarding.body.3": "Тап по трате открывает редактирование. Корзина удаляет запись. Долгое нажатие на карточку дня снова открывает список трат.",
+            "onboarding.footer": "Можно начать с демо-записи и удалить или изменить её прямо сейчас.",
+            "onboarding.editor.demoHint": "Это демо-запись. Тапните по ней, чтобы изменить, или удалите через корзину.",
+            "onboarding.editor.demoBadge": "Демо"
         ],
         .en: [
             "tab.today": "Today",
@@ -177,7 +189,19 @@ enum L10n {
             "settings.resetAll": "Reset",
             "settings.resetAll.hint": "Deletes all progress and starts again from today.",
             "settings.resetAll.confirm.title": "Reset all progress?",
-            "settings.resetAll.confirm.message": "All game data will be permanently deleted."
+            "settings.resetAll.confirm.message": "All game data will be permanently deleted.",
+            "onboarding.skip": "Skip for now",
+            "onboarding.next": "Next",
+            "onboarding.startDemo": "Open demo day",
+            "onboarding.title.1": "How the game works",
+            "onboarding.body.1": "Each day gives you a new limit. A filled day doubles the next budget, and a missed day stops your progress.",
+            "onboarding.title.2": "How to add spends",
+            "onboarding.body.2": "On the Today tab, tap \"Add spends\", then enter a title, amount, and optional category.",
+            "onboarding.title.3": "How to edit",
+            "onboarding.body.3": "Tap a spend to edit it. Use the trash button to delete it. Long press a day tile to reopen its spends.",
+            "onboarding.footer": "You can start with a demo entry and delete or change it right away.",
+            "onboarding.editor.demoHint": "This is a demo entry. Tap it to edit it, or remove it with the trash button.",
+            "onboarding.editor.demoBadge": "Demo"
         ],
         .de: [
             "tab.today": "Heute",
@@ -251,7 +275,19 @@ enum L10n {
             "settings.resetAll": "Zuruecksetzen",
             "settings.resetAll.hint": "Loescht den gesamten Fortschritt und startet ab heute neu.",
             "settings.resetAll.confirm.title": "Gesamten Fortschritt zuruecksetzen?",
-            "settings.resetAll.confirm.message": "Alle Spieldaten werden dauerhaft geloescht."
+            "settings.resetAll.confirm.message": "Alle Spieldaten werden dauerhaft geloescht.",
+            "onboarding.skip": "Vorerst ueberspringen",
+            "onboarding.next": "Weiter",
+            "onboarding.startDemo": "Demo-Tag oeffnen",
+            "onboarding.title.1": "So funktioniert das Spiel",
+            "onboarding.body.1": "Jeder Tag hat ein neues Limit. Ein ausgefuellter Tag verdoppelt das naechste Budget, ein verpasster Tag stoppt den Fortschritt.",
+            "onboarding.title.2": "So fuegst du Ausgaben hinzu",
+            "onboarding.body.2": "Tippe im Tab Heute auf \"Ausgaben hinzufuegen\" und gib Titel, Betrag und optional eine Kategorie ein.",
+            "onboarding.title.3": "So bearbeitest du Eintraege",
+            "onboarding.body.3": "Tippe auf einen Eintrag, um ihn zu bearbeiten. Mit dem Papierkorb loeschst du ihn. Halte eine Tageskarte gedrueckt, um die Ausgaben erneut zu oeffnen.",
+            "onboarding.footer": "Du kannst mit einem Demo-Eintrag starten und ihn sofort loeschen oder aendern.",
+            "onboarding.editor.demoHint": "Das ist ein Demo-Eintrag. Tippe darauf zum Bearbeiten oder loesche ihn mit dem Papierkorb.",
+            "onboarding.editor.demoBadge": "Demo"
         ]
     ]
 }

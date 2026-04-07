@@ -9,7 +9,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
   intl: ^0.20.2
+=======
+  intl: ^0.19.0
+>>>>>>> theirs
+=======
+  intl: ^0.19.0
+>>>>>>> theirs
+=======
+  intl: ^0.19.0
+>>>>>>> theirs
+=======
+  intl: ^0.19.0
+>>>>>>> theirs
   flutter_localizations:
     sdk: flutter
   shared_preferences: ^2.2.2

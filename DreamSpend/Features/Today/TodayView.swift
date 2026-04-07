@@ -5,6 +5,7 @@ import CoreMotion
 
 struct TodayView: View {
     let viewModel: TodayViewModel
+    @Binding var requestedEditingDayIndex: Int?
     @State private var selectedDayIndex: Int?
     @State private var editingDayIndex: Int?
     @AppStorage("liquidEffectEnabled") private var liquidEffectEnabled: Bool = true
@@ -105,6 +106,12 @@ struct TodayView: View {
                     self.selectedDayIndex = newValue
                 }
             }
+            .onAppear {
+                handleExternalEditingRequest()
+            }
+            .onChange(of: requestedEditingDayIndex) {
+                handleExternalEditingRequest()
+            }
             .sheet(item: Binding(
                 get: {
                     editingDayIndex.map { EditableDay(id: $0) }
@@ -201,6 +208,13 @@ struct TodayView: View {
             return
         }
         selectedDayIndex = latest.dayIndex
+    }
+
+    private func handleExternalEditingRequest() {
+        guard let requestedEditingDayIndex else { return }
+        selectedDayIndex = requestedEditingDayIndex
+        editingDayIndex = requestedEditingDayIndex
+        self.requestedEditingDayIndex = nil
     }
 
     private func tileBackgroundColor(for day: DayEntry, isSelected: Bool) -> Color {
@@ -304,10 +318,6 @@ struct TodayView: View {
         let phase: CGFloat
         let amplitude: CGFloat
 
-        #if os(iOS)
-        private let motion = MotionManager.shared
-        #endif
-
         func path(in rect: CGRect) -> Path {
             var path = Path()
             let clamped = max(0, min(1, progress))
@@ -315,7 +325,7 @@ struct TodayView: View {
 
             // Compute a simple tilt based on device roll (iOS only)
             #if os(iOS)
-            let tilt = CGFloat(motion.currentRoll) // radians
+            let tilt = CGFloat(MotionManager.shared.currentRoll) // radians
             #else
             let tilt = CGFloat(0)
             #endif
@@ -439,4 +449,3 @@ struct TodayView: View {
 private struct EditableDay: Identifiable {
     let id: Int
 }
-

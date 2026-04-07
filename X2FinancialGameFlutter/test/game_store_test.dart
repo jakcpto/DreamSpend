@@ -21,7 +21,23 @@ class FakePersistence extends PersistenceService {
   Future<List<Achievement>> loadAchievements() async => achievements;
 
   @override
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
   Future<(int, int)> loadProgressMeta() async => (streak, misses);
+=======
+  Future<(int streak, int misses)> loadProgressMeta() async => (streak, misses);
+>>>>>>> theirs
+=======
+  Future<(int streak, int misses)> loadProgressMeta() async => (streak, misses);
+>>>>>>> theirs
+=======
+  Future<(int streak, int misses)> loadProgressMeta() async => (streak, misses);
+>>>>>>> theirs
+=======
+  Future<(int streak, int misses)> loadProgressMeta() async => (streak, misses);
+>>>>>>> theirs
 
   @override
   Future<void> saveSettings(GameSettings value) async => settings = value;

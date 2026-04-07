@@ -30,6 +30,7 @@
 		6AD40B840D5D1D49BD1A7048 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349672A6A22BA43327CEAAA2 /* TodayViewModel.swift */; };
 		75A9A771B833D2E129AC192D /* FXConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988DA0468C081ABADDDA5383 /* FXConversionTests.swift */; };
 		779B571A5FA801EDF8BBDF38 /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77087BF9D170FAD4697B01E4 /* AchievementsViewModel.swift */; };
+		7A692F3C2F850FE800093881 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A692F3B2F850FE800093881 /* OnboardingView.swift */; };
 		83704B0C4E723C872C00F59A /* CelebrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAC23719607479A5FC6A675 /* CelebrationViewModel.swift */; };
 		858C91BFE5197386E51F4AE4 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D0239BBCE03607AA0A183 /* CelebrationView.swift */; };
 		8D63565327A4C84F60FA1A11 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F29CEC1033D05625E9285E5 /* Achievement.swift */; };
@@ -90,6 +91,7 @@
 		7463CC71FC5922CC6C539660 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		750BB9C2564DA8518A73D1D0 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		77087BF9D170FAD4697B01E4 /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
+		7A692F3B2F850FE800093881 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		988DA0468C081ABADDDA5383 /* FXConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXConversionTests.swift; sourceTree = "<group>"; };
 		A2991F4DB7ACE6171DC7848F /* DaySpendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySpendsViewModel.swift; sourceTree = "<group>"; };
 		A40A4DB658E2B3CB45B0B530 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				87AAD9DC8F8BBAB047C11E05 /* Settings */,
 				33043BA666D136B69961A090 /* Shared */,
 				402F60C7E873A7DF8BA2B7CF /* Today */,
+				7A692F3A2F850FD700093881 /* Onboarding 2 */,
 			);
 			name = Features;
 			path = DreamSpend/Features;
@@ -237,6 +240,14 @@
 				2E235F658B32A6BA22BAC0DC /* HistoryViewModel.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		7A692F3A2F850FD700093881 /* Onboarding 2 */ = {
+			isa = PBXGroup;
+			children = (
+				7A692F3B2F850FE800093881 /* OnboardingView.swift */,
+			);
+			path = "Onboarding 2";
 			sourceTree = "<group>";
 		};
 		81C642EAF7CEB0F7830C3397 /* Localization */ = {
@@ -572,6 +583,7 @@
 				25D8E16FD6874CDBAC43A9B8 /* HistoryViewModel.swift in Sources */,
 				9C7087F5BF3D2437CFFF2426 /* L10n.swift in Sources */,
 				283C12C513DE50AE727EF8F8 /* LanguageService.swift in Sources */,
+				7A692F3C2F850FE800093881 /* OnboardingView.swift in Sources */,
 				579AA1E70EFAA82C75175342 /* LiveFXService.swift in Sources */,
 				BC397924DA6F109C669DC590 /* MinorUnits.swift in Sources */,
 				59BF3009EDC66F2D9A5A9085 /* NotificationService.swift in Sources */,
@@ -688,7 +700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JDC7U48FVQ;
+				DEVELOPMENT_TEAM = BDLXDVBT8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DreamSpend;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -709,13 +721,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BDLXDVBT8B;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evgeniy.DreamSpendTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teccod.DreamSpendTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DreamSpend.app/DreamSpend";
@@ -726,13 +740,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BDLXDVBT8B;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evgeniy.DreamSpendTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teccod.DreamSpendTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DreamSpend.app/DreamSpend";
@@ -746,7 +762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JDC7U48FVQ;
+				DEVELOPMENT_TEAM = BDLXDVBT8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DreamSpend;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -175,10 +175,35 @@ class GameSettings {
       };
 
   factory GameSettings.fromJson(Map<String, dynamic> json) {
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+    Map<String, int> intMap(Object? data) => ((data as Map<String, dynamic>? ?? <String, dynamic>{})
+          .map((key, value) => MapEntry(key, (value as num).round())));
+
+    Map<String, double> doubleMap(Object? data) =>
+=======
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
     Map<String, int> _intMap(Object? data) => ((data as Map<String, dynamic>? ?? <String, dynamic>{})
           .map((key, value) => MapEntry(key, (value as num).round())));
 
     Map<String, double> _doubleMap(Object? data) =>
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
         ((data as Map<String, dynamic>? ?? <String, dynamic>{})
             .map((key, value) => MapEntry(key, (value as num).toDouble())));
 
@@ -191,11 +216,37 @@ class GameSettings {
         (item) => item.name == json['maxBehavior'],
         orElse: () => MaxBehavior.reset,
       ),
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+      startAmountMinorByLanguage: intMap(json['startAmountMinorByLanguage']),
+      maxAmountMinorByLanguage: intMap(json['maxAmountMinorByLanguage']),
+      currencyByLanguage: ((json['currencyByLanguage'] as Map<String, dynamic>? ?? <String, dynamic>{})
+          .map((key, value) => MapEntry(key, value as String))),
+      approxFxTable: doubleMap(json['approxFxTable']),
+=======
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
       startAmountMinorByLanguage: _intMap(json['startAmountMinorByLanguage']),
       maxAmountMinorByLanguage: _intMap(json['maxAmountMinorByLanguage']),
       currencyByLanguage: ((json['currencyByLanguage'] as Map<String, dynamic>? ?? <String, dynamic>{})
           .map((key, value) => MapEntry(key, value as String))),
       approxFxTable: _doubleMap(json['approxFxTable']),
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
     );
   }
 }

@@ -36,6 +36,14 @@ struct DaySpendsView: View {
 
     var body: some View {
         List {
+            if viewModel.hasDemoItems {
+                Section {
+                    Text(L10n.text("onboarding.editor.demoHint", language))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
             Section(L10n.text("spends.limit", language)) {
                 VStack(alignment: .leading, spacing: 6) {
                     Text(CurrencyFormatter.format(minor: viewModel.limitMinor, currencyCode: viewModel.currencyCode, localeIdentifier: localeIdentifier))
@@ -115,6 +123,11 @@ struct DaySpendsView: View {
                             VStack(alignment: .leading) {
                                 Text(item.title)
                                     .font(.body)
+                                if item.isDemo {
+                                    Text(L10n.text("onboarding.editor.demoBadge", language))
+                                        .font(.caption2.weight(.semibold))
+                                        .foregroundStyle(.orange)
+                                }
                                 if let category = item.category {
                                     Text(category)
                                         .font(.caption)

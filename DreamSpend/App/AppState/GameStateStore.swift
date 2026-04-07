@@ -85,6 +85,10 @@ final class GameStateStore: ObservableObject {
         return days.last(where: { calendarService.isSameLocalDay($0.date, today) })
     }
 
+    var hasRecordedProgress: Bool {
+        days.contains { !$0.items.isEmpty }
+    }
+
     var categorySuggestions: [String] {
         Self.uniqueCategories(defaultCategories + customCategories)
     }
@@ -286,6 +290,44 @@ final class GameStateStore: ObservableObject {
         showCelebration = false
     }
 
+    func prepareOnboardingDemo() -> Int? {
+        ensureTodayEntry()
+
+        guard let todayIndex = todayEntry?.dayIndex else { return nil }
+        guard let index = days.firstIndex(where: { $0.dayIndex == todayIndex }) else { return nil }
+        guard days[index].items.isEmpty else { return todayIndex }
+
+        let demoItems = onboardingDemoItems(for: days[index])
+        days[index].items = demoItems
+        days[index].status = .filled
+        draftItemsByDayIndex[todayIndex] = demoItems
+        mergeCategories(from: demoItems)
+        currentStreak = recalculatedCurrentStreak()
+        persist()
+        return todayIndex
+    }
+
+    func clearOnboardingDemo() {
+        for index in days.indices {
+            let filteredItems = days[index].items.filter { !$0.isDemo }
+            if filteredItems.count != days[index].items.count {
+                days[index].items = filteredItems
+                if filteredItems.isEmpty {
+                    let isToday = todayEntry?.dayIndex == days[index].dayIndex
+                    days[index].status = isToday ? .open : .missed
+                }
+            }
+        }
+
+        draftItemsByDayIndex = draftItemsByDayIndex.compactMapValues { items in
+            let filteredItems = items.filter { !$0.isDemo }
+            return filteredItems.isEmpty ? nil : filteredItems
+        }
+
+        currentStreak = recalculatedCurrentStreak()
+        persist()
+    }
+
     func restartGame() {
         days = []
         currentStreak = 0
@@ -466,6 +508,30 @@ final class GameStateStore: ObservableObject {
         if customCategoryColors[key] == nil {
             customCategoryColors[key] = CategoryPalette.fallbackToken(for: category)
         }
+    }
+
+    private func onboardingDemoItems(for day: DayEntry) -> [SpendItem] {
+        let amount = max(day.dailyLimitMinor / 2, 1)
+        let category = defaultCategories.first ?? "Food"
+        let title: String
+
+        switch settings.languageCode {
+        case .ru:
+            title = "Демо-покупка"
+        case .en:
+            title = "Demo purchase"
+        case .de:
+            title = "Demo-Kauf"
+        }
+
+        return [
+            SpendItem(
+                title: title,
+                amountMinor: amount,
+                category: category,
+                isDemo: true
+            )
+        ]
     }
 
     private func colorKey(for category: String) -> String {
