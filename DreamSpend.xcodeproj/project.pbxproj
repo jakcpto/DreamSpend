@@ -474,7 +474,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A943461BCF39B53D8F4A8E5 /* Build configuration list for PBXNativeTarget "DreamSpend" */;
 			buildPhases = (
-				30642D8859158534AA62B12B /* Auto Increment Build Number */,
 				0570AD76D82EE514F77DC336 /* Sources */,
 				45B2FF466ED08087E458BA42 /* Resources */,
 			);
@@ -559,27 +558,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		30642D8859158534AA62B12B /* Auto Increment Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Auto Increment Build Number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"$ACTION\" = \"indexbuild\" ] || [ \"$ENABLE_PREVIEWS\" = \"YES\" ]; then\n  exit 0\nfi\n\ncd \"$SRCROOT\" || exit 1\nxcrun agvtool next-version -all\nNEW_BUILD_NUMBER=\"$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' \"$SRCROOT/Info.plist\")\"\npython3 - \"$SRCROOT/project.yml\" \"$NEW_BUILD_NUMBER\" <<'PY'\nfrom pathlib import Path\nimport re\nimport sys\n\npath = Path(sys.argv[1])\nnew_build_number = sys.argv[2]\ntext = path.read_text()\nupdated = re.sub(\n    r\"(^\\s*CURRENT_PROJECT_VERSION:\\s*)\\d+\",\n    rf\"\\g<1>{new_build_number}\",\n    text,\n    count=1,\n    flags=re.MULTILINE,\n)\nif updated == text:\n    raise SystemExit(\"CURRENT_PROJECT_VERSION not found in project.yml\")\npath.write_text(updated)\nPY\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0570AD76D82EE514F77DC336 /* Sources */ = {
@@ -685,7 +663,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -724,6 +702,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDLXDVBT8B;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -785,6 +764,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDLXDVBT8B;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -834,7 +814,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
