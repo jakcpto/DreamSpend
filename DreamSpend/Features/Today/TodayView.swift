@@ -226,12 +226,17 @@ struct TodayView: View {
     // MARK: - iPhone Layout
 
     private var iPhoneLayout: some View {
-        VStack(spacing: 16) {
-            calendarSectionCard
-                .frame(maxHeight: 320)
+        GeometryReader { proxy in
+            let calendarHeight = min(max(proxy.size.height * 0.34, 240), 280)
 
-            dayDetailPanel
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            VStack(spacing: 16) {
+                calendarSectionCard
+                    .frame(height: calendarHeight)
+
+                dayDetailPanel
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
         .padding(16)
         .background(screenBackground.ignoresSafeArea())
