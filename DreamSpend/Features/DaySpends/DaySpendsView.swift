@@ -1,4 +1,9 @@
 import SwiftUI
+#if os(iOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 struct DaySpendsView: View {
     @Environment(\.dismiss) private var dismiss
@@ -13,7 +18,9 @@ struct DaySpendsView: View {
     @State private var isCategoryEditorPresented: Bool = false
     @State private var autosavedItemID: UUID?
     @State private var autosaveTask: Task<Void, Never>?
-    @State private var amountFieldValidationTint: Double = 0
+    @State private var amountValidationTrigger: Int = 0
+    @State private var hasAppeared = false
+    @State private var wasAmountInvalid = false
 
     @FocusState private var focusedField: Field?
 
@@ -68,11 +75,7 @@ struct DaySpendsView: View {
                     .onSubmit {
                         focusedField = nil
                     }
-                    .listRowBackground(
-                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(Color.red.opacity(amountFieldValidationTint))
-                            .padding(.vertical, 2)
-                    )
+                    .modifier(AmountValidationFeedbackModifier(isInvalid: amountExceedsAllowed, trigger: amountValidationTrigger))
 
                 HStack {
                     TextField(L10n.text("spends.category", language), text: $category)
@@ -187,10 +190,19 @@ struct DaySpendsView: View {
             }
         }
         .navigationTitle(L10n.text("spends.title", language))
+        .onAppear {
+            guard !hasAppeared else { return }
+            hasAppeared = true
+            wasAmountInvalid = amountExceedsAllowed
+            DispatchQueue.main.async {
+                focusedField = .amount
+            }
+        }
         .onChange(of: title) {
             scheduleAutosave()
         }
         .onChange(of: amountText) {
+            handleAmountValidationChange()
             scheduleAutosave()
         }
         .onChange(of: category) {
@@ -302,8 +314,9 @@ struct DaySpendsView: View {
         title = item.title
         amountText = majorString(fromMinor: item.amountMinor)
         category = item.category ?? ""
+        wasAmountInvalid = amountExceedsAllowed
         DispatchQueue.main.async {
-            focusedField = nil
+            focusedField = .amount
         }
     }
 
@@ -313,6 +326,7 @@ struct DaySpendsView: View {
         title = ""
         amountText = ""
         category = ""
+        wasAmountInvalid = false
         viewModel.cancelEditing()
         DispatchQueue.main.async {
             focusedField = nil
@@ -355,13 +369,17 @@ struct DaySpendsView: View {
         viewModel.editingItemID ?? autosavedItemID
     }
 
+    private var amountExceedsAllowed: Bool {
+        parsedAmountMinor > 0 && !canCommit(amountMinor: parsedAmountMinor)
+    }
+
     private func commitCurrentSpend(categoryOverride: String?) {
         let selectedCategory = categoryOverride?.trimmingCharacters(in: .whitespacesAndNewlines)
         let category = (selectedCategory?.isEmpty == false ? selectedCategory : normalizedCategory)
 
         guard !trimmedTitle.isEmpty, parsedAmountMinor > 0, let category else { return }
-        guard canCommit(amountMinor: parsedAmountMinor) else {
-            triggerAmountValidationFeedback()
+        guard !amountExceedsAllowed else {
+            triggerAmountValidationFeedback(forceAnimation: true)
             return
         }
 
@@ -387,14 +405,27 @@ struct DaySpendsView: View {
     }
 
     private func triggerAmountValidationFeedback() {
-        autosaveTask?.cancel()
-        amountFieldValidationTint = 0.32
+        triggerAmountValidationFeedback(forceAnimation: true)
+    }
 
-        Task { @MainActor in
-            try? await Task.sleep(for: .seconds(2))
-            withAnimation(.easeOut(duration: 0.5)) {
-                amountFieldValidationTint = 0
+    private func triggerAmountValidationFeedback(forceAnimation: Bool) {
+        autosaveTask?.cancel()
+        focusedField = .amount
+
+        if forceAnimation || amountExceedsAllowed {
+            withAnimation(.linear(duration: 0.36)) {
+                amountValidationTrigger += 1
             }
+            playAmountValidationHaptic()
+        }
+    }
+
+    private func handleAmountValidationChange() {
+        let isInvalid = amountExceedsAllowed
+        defer { wasAmountInvalid = isInvalid }
+
+        if isInvalid && !wasAmountInvalid {
+            triggerAmountValidationFeedback(forceAnimation: false)
         }
     }
 
@@ -405,7 +436,7 @@ struct DaySpendsView: View {
         let amountMinor = parsedAmountMinor
         let category = autosaveCategory
 
-        guard !title.isEmpty, amountMinor > 0, let category else { return }
+        guard !title.isEmpty, amountMinor > 0, let category, canCommit(amountMinor: amountMinor) else { return }
 
         autosaveTask = Task { @MainActor in
             try? await Task.sleep(for: .seconds(3))
@@ -420,7 +451,7 @@ struct DaySpendsView: View {
     }
 
     private func autosaveEditorIfNeeded() {
-        guard !trimmedTitle.isEmpty, parsedAmountMinor > 0, let category = autosaveCategory else { return }
+        guard !trimmedTitle.isEmpty, parsedAmountMinor > 0, let category = autosaveCategory, canCommit(amountMinor: parsedAmountMinor) else { return }
         autosavedItemID = viewModel.upsertItem(
             id: currentEditorItemID,
             title: trimmedTitle,
@@ -437,5 +468,48 @@ struct DaySpendsView: View {
         #else
         TextField(title, text: text)
         #endif
+    }
+
+    private func playAmountValidationHaptic() {
+        #if os(iOS)
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        #elseif os(macOS)
+        NSHapticFeedbackManager.defaultPerformer.perform(.alignment, performanceTime: .now)
+        #endif
+    }
+}
+
+private struct AmountValidationFeedbackModifier: ViewModifier {
+    let isInvalid: Bool
+    let trigger: Int
+
+    func body(content: Content) -> some View {
+        content
+            .animation(.easeInOut(duration: 0.18), value: isInvalid)
+            .background {
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(Color.red.opacity(isInvalid ? 0.12 : 0))
+                    .padding(.vertical, 2)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(Color.red.opacity(isInvalid ? 0.85 : 0), lineWidth: 1)
+                    .padding(.vertical, 2)
+            }
+            .modifier(ShakeEffect(trigger: trigger))
+    }
+}
+
+private struct ShakeEffect: GeometryEffect {
+    var trigger: Int
+
+    var animatableData: CGFloat {
+        get { CGFloat(trigger) }
+        set { }
+    }
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        let translation = 8 * sin(animatableData * .pi * 4)
+        return ProjectionTransform(CGAffineTransform(translationX: translation, y: 0))
     }
 }
