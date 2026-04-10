@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'l10n/app_strings.dart';
-import 'screens/home_screen.dart';
+import 'navigation/app_router.dart';
 import 'state/game_store.dart';
+import 'theme/app_theme.dart';
 import 'widgets/app_scope.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class X2FinancialGameApp extends StatefulWidget {
 
 class _X2FinancialGameAppState extends State<X2FinancialGameApp> {
   final store = GameStore();
+  late final router = buildRouter(store);
 
   @override
   void didChangeDependencies() {
@@ -30,12 +32,22 @@ class _X2FinancialGameAppState extends State<X2FinancialGameApp> {
   }
 
   @override
+  void dispose() {
+    store.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: store,
       builder: (context, _) {
         if (!store.initialized) {
-          return const MaterialApp(home: Scaffold(body: Center(child: CircularProgressIndicator())));
+          return const MaterialApp(
+            home: Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            ),
+          );
         }
 
         final locale = Locale(store.settings.languageCode);
@@ -44,7 +56,8 @@ class _X2FinancialGameAppState extends State<X2FinancialGameApp> {
           notifier: store,
           child: StringsScope(
             locale: locale,
-            child: MaterialApp(
+            child: MaterialApp.router(
+              routerConfig: router,
               locale: locale,
               supportedLocales: AppStrings.supportedLocales,
               localizationsDelegates: const [
@@ -52,12 +65,12 @@ class _X2FinancialGameAppState extends State<X2FinancialGameApp> {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              title: AppStrings(locale).t('appTitle'),
-              theme: ThemeData(
-                colorSchemeSeed: Colors.teal,
-                useMaterial3: true,
-              ),
-              home: const HomeScreen(),
+              title: 'DreamSpend',
+              theme: AppTheme.light(),
+              builder: (context, child) {
+                // Wrap every route in the background gradient
+                return AppBackground(child: child ?? const SizedBox.shrink());
+              },
             ),
           ),
         );
