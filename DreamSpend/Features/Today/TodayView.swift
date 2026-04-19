@@ -107,34 +107,38 @@ struct TodayView: View {
                 .font(.title2.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            ScrollView([.horizontal, .vertical], showsIndicators: true) {
-                VStack(alignment: .leading, spacing: 12) {
-                    ForEach(viewModel.monthSections) { section in
-                        HStack(alignment: .top, spacing: 10) {
-                            Text(viewModel.monthLabel(for: section.monthStart))
-                                .font(.caption.bold())
-                                .foregroundStyle(.secondary)
-                                .frame(width: 34, alignment: .leading)
-                                .padding(.top, 8)
+            ScrollViewReader { proxy in
+                ScrollView([.horizontal, .vertical], showsIndicators: true) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        ForEach(viewModel.monthSections) { section in
+                            HStack(alignment: .top, spacing: 10) {
+                                Text(viewModel.monthLabel(for: section.monthStart))
+                                    .font(.caption.bold())
+                                    .foregroundStyle(.secondary)
+                                    .frame(width: 34, alignment: .leading)
+                                    .padding(.top, 8)
 
-                            HStack(alignment: .top, spacing: 12) {
-                                ForEach(section.days) { day in
-                                    dateTile(for: day)
-                                        .id(day.dayIndex)
+                                HStack(alignment: .top, spacing: 12) {
+                                    ForEach(section.days) { day in
+                                        dateTile(for: day)
+                                            .id(day.dayIndex)
+                                    }
                                 }
                             }
                         }
                     }
+                    .padding(.vertical, 2)
+                    .padding(.bottom, 4)
                 }
-                .padding(.vertical, 2)
-                .padding(.bottom, 4)
-            }
-            .onAppear {
-                selectLatestDay()
-            }
-            .onChange(of: viewModel.availableDays.last?.dayIndex) {
-                guard let target = viewModel.availableDays.last?.dayIndex else { return }
-                selectedDayIndex = target
+                .onAppear {
+                    selectLatestDay()
+                    scrollCalendarToCurrentDay(using: proxy, animated: false)
+                }
+                .onChange(of: viewModel.availableDays.last?.dayIndex) {
+                    guard let target = viewModel.availableDays.last?.dayIndex else { return }
+                    selectedDayIndex = target
+                    scrollCalendarToCurrentDay(using: proxy)
+                }
             }
         }
     }
@@ -326,6 +330,21 @@ struct TodayView: View {
             return
         }
         selectedDayIndex = latest.dayIndex
+    }
+
+    private func scrollCalendarToCurrentDay(using proxy: ScrollViewProxy, animated: Bool = true) {
+        let targetDayIndex = viewModel.todayDayIndex ?? viewModel.availableDays.last?.dayIndex
+        guard let targetDayIndex else { return }
+
+        DispatchQueue.main.async {
+            if animated {
+                withAnimation(.easeOut(duration: 0.25)) {
+                    proxy.scrollTo(targetDayIndex, anchor: .center)
+                }
+            } else {
+                proxy.scrollTo(targetDayIndex, anchor: .center)
+            }
+        }
     }
 
     private func handleExternalEditingRequest() {
